@@ -11,3 +11,4 @@
 //= require store/spree_promo
 
 //= require_tree .
+//= require jquery.jqzoom-core-pack
