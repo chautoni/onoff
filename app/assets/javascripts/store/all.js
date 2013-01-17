@@ -12,3 +12,4 @@
 
 //= require_tree .
 //= require jquery.jqzoom-core-pack
+//= require jquery.jcarousel.min
