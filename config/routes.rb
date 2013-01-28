@@ -9,6 +9,10 @@ Onoff::Application.routes.draw do
           # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  Spree::Core::Engine.routes.prepend do
+    get '/admin/products/:product_id/edit_images', :to => 'admin/products#edit_images', :as => :edit_images_admin_product
+  end
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

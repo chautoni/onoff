@@ -1,0 +1,18 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+<% if @product %>
+	<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Images'} %>
+	<% content_for :page_actions do %>
+	  <li><%= link_to_with_icon('icon-save', t(:save), admin_product_images_url(@product), :id => 'save_edit_images_link', :class => 'button') %></li>
+	  <li><%= link_to_with_icon('icon-cancel', t(:cancel), admin_product_images_url(@product), :id => 'cancel_edit_images_link', :class => 'button') %></li>
+	<% end %>
+
+	<%= form_for [:admin, @product, @product.images.new], :html => { :multipart => true }  do |f| %>
+			<div id="uploader", data-product-permalink="<%= @product.permalink%>">
+				<%= t(:drag_drop_for_upload) %>
+				<%= f.file_field :attachment, :multiple => true, :name => 'image[attachment]', :class => "button", :style => 'display:none' %>
+				<%= f.hidden_field :viewable_id, :value => @product.master.id %>
+				<%= link_to_with_icon('icon-upload', t(:upload), '#', :id => 'upload_button', :class => 'button') %>
+			</div>
+	<% end %>
+<% end %>
+

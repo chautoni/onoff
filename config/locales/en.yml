@@ -1,5 +1,9 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# encoding: utf-8
 
 en:
   hello: "Hello world"
+  drag_drop_for_upload: "Drag and drop anywhere to upload images"
+  product_not_found: "Product not found"
+
