@@ -8,3 +8,4 @@ en:
   product_not_found: "Product not found"
   update_product_fail: "Fail to update product"
   update_product_success: "Product has been updated"
+  one_color_one_image: "A color can be assigned only one color"

@@ -6,17 +6,23 @@ Spree::Admin::ProductsController.class_eval do
    
   def edit_images
   	@color_options = [t(:all)] + @product.colors
-    @p_images = @product.images.sort_by { |img| img[:created_at] }
-  	respond_with(@product, @p_images)
+    @product_images = @product.images.sort_by { |img| img[:attachment_updated_at] }
+  	respond_with(@product, @product_images)
   end
 
   def update_images
-    if @product.update_attributes(params[:product])
-      flash[:success] = t(:update_product_success)
+    used_colors = params[:product][:images_attributes].map { |k,v| v }.map { |e| p e[:color] }.select{ |c| @product.colors.include?(c) }
+    if used_colors.count != used_colors.uniq.count
+      flash[:error] = t(:one_color_one_image)
+      redirect_to edit_images_admin_product_url(@product)  
     else
-      flash[:error] = t(:update_product_fail)
+      if @product.update_attributes(params[:product])
+        flash[:success] = t(:update_product_success)
+      else
+        flash[:error] = t(:update_product_fail)
+      end
+      redirect_to admin_product_images_url(@product)  
     end
-    redirect_to admin_product_images_url(@product)  
   end
 
   private
