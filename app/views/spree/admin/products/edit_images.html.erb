@@ -14,5 +14,22 @@
 				<%= link_to_with_icon('icon-upload', t(:upload), '#', :id => 'upload_button', :class => 'button') %>
 			</div>
 	<% end %>
+
+	<div id="images-list">
+		<%= form_for [:admin, @product], :method => :put, :html => { :multipart => true }, :url => update_images_admin_product_url(@product) do |f| %>
+			<%= f.fields_for :images do |builder| %>
+			 	<% if builder.object.persisted? %>
+					<div class='image-detail'>
+						<div class='image-view'>
+							<%= image_tag builder.object.attachment.url(:product) %>
+						</div>
+						<%= builder.select :color, @color_options, {} %>
+					</div>
+				<% end %>
+			<% end %>
+			<div class='clear'></div>
+			<%= f.submit %>
+		<% end %>
+	</div>
 <% end %>
 

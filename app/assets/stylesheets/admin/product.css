@@ -1,0 +1,21 @@
+.image-detail {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	vertical-align: middle;
+	margin: 15px 0px 15px 5px;
+}
+
+.image-detail .image-view {
+	width: 220px;
+	height: 230px;
+}
+
+.image-detail .image-view img {
+	width: 90%;
+	height: 90%;
+}
+
+.image-detail select {
+	width: 150px;
+}

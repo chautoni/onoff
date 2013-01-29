@@ -6,4 +6,5 @@ en:
   hello: "Hello world"
   drag_drop_for_upload: "Drag and drop anywhere to upload images"
   product_not_found: "Product not found"
-
+  update_product_fail: "Fail to update product"
+  update_product_success: "Product has been updated"
