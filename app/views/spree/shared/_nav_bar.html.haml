@@ -1,9 +1,9 @@
 %ul#main-nav-bar.inline
 	%li
-		= link_to "Home(logo)", root_path
+		= link_to image_tag('logo.png'), root_path, :class => 'nav-buttons'
 	%li
-		= link_to "Bo Suu Tap", '#'
+		= link_to image_tag('nav-collections.png'), '#', :class => 'nav-buttons'
 	%li
-		= link_to "Cua Hang", products_path
+		= link_to image_tag('nav-online-shop.png'), products_path, :class => 'nav-buttons'
 	%li
-		= link_to "Khuyen Mai", '#'
+		= link_to image_tag('nav-promotion.png'), '#', :class => 'nav-buttons'

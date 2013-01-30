@@ -1,0 +1,32 @@
+#header {
+	position: fixed;
+	top: 0px;
+	display: block;
+	height: 150px;
+	margin: 0px;
+	z-index: 10000000;
+}
+
+#wrapper {
+	position: relative;
+	padding-top: 150px;
+}
+
+nav ul#main-nav-bar {
+	border-bottom: none;
+}
+
+ul#main-nav-bar li a.nav-buttons{
+	vertical-align: middle;
+	display: inline-block;
+	margin: 0px 45px;
+	text-align: center;
+}
+
+ul#main-nav-bar li:first-child a.nav-buttons {
+	margin-left: 0px;
+}
+
+ul#main-nav-bar li:last-child a.nav-buttons {
+	margin-right: 0px;
+}
