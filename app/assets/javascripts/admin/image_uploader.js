@@ -20,6 +20,7 @@ $(function() {
 
 	$('#new_image').fileupload({
 	    dropZone: $('#wrapper'),
-	    url: '/admin/products/' + $('#uploader').data('product-permalink') + '/images'
+	    url: '/admin/products/' + $('#uploader').data('product-permalink') + '/create_image'
+	    // url: '/admin/products/' + $('#uploader').data('product-permalink') + '/images'
 	});
 });

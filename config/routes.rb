@@ -12,6 +12,7 @@ Onoff::Application.routes.draw do
   Spree::Core::Engine.routes.prepend do
     get '/admin/products/:product_id/edit_images', :to => 'admin/products#edit_images', :as => :edit_images_admin_product
     put '/admin/products/:product_id/update_images', :to => 'admin/products#update_images', :as => :update_images_admin_product
+    post '/admin/products/:product_id/create_image', :to => 'admin/products#create_image', :as => :create_image_admin_product
   end
 
   # Sample of regular route:

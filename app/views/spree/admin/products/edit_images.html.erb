@@ -6,7 +6,7 @@
 	  <li><%= link_to_with_icon('icon-cancel', t(:cancel), admin_product_images_url(@product), :id => 'cancel_edit_images_link', :class => 'button') %></li>
 	<% end %>
 
-	<%= form_for [:admin, @product, @product.images.new], :html => { :multipart => true }  do |f| %>
+	<%= form_for [:admin, @product, @product.images.new], :html => { :multipart => true }, :url => create_image_admin_product_url(@product)  do |f| %>
 			<div id="uploader", data-product-permalink="<%= @product.permalink%>">
 				<%= t(:drag_drop_for_upload) %>
 				<%= f.file_field :attachment, :multiple => true, :name => 'image[attachment]', :class => "button", :style => 'display:none' %>
@@ -19,14 +19,7 @@
 		<%= form_for [:admin, @product], :method => :put, :html => { :multipart => true }, :url => update_images_admin_product_url(@product) do |f| %>
 			<%= f.fields_for :images, @product_images do |builder| %>
 			 	<% if builder.object.persisted? %>
-					<div class='image-detail'>
-						<div class='image-view'>
-							<%= image_tag builder.object.attachment.url(:product) %>
-						</div>
-						<%= builder.hidden_field :_destroy, :value => 0 %>
-						<%= link_to_remove "remove", f %>
-						<%= builder.select :color, @color_options, {} %>
-					</div>
+					<%= render :partial => 'edit_image', :locals => { :f => builder } %>
 				<% end %>
 			<% end %>
 			<div class='clear'></div>
