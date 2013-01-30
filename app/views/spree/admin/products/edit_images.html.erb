@@ -23,6 +23,8 @@
 						<div class='image-view'>
 							<%= image_tag builder.object.attachment.url(:product) %>
 						</div>
+						<%= builder.hidden_field :_destroy, :value => 0 %>
+						<%= link_to_remove "remove", f %>
 						<%= builder.select :color, @color_options, {} %>
 					</div>
 				<% end %>

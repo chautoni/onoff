@@ -4,6 +4,7 @@
 	text-align: center;
 	vertical-align: middle;
 	margin: 15px 0px 15px 5px;
+	position: relative;
 }
 
 .image-detail .image-view {
@@ -18,4 +19,15 @@
 
 .image-detail select {
 	width: 150px;
+}
+
+.image-detail a.remove-image-link {
+	position: absolute;
+	top: -10px;
+	right: 0;
+	display: block;
+	width: 24px;
+	height: 24px;
+	background: url('../delete-image-button.png');
+	text-indent: 10000px;
 }
