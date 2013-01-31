@@ -1,0 +1,28 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:homepage_slideshow) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= link_to_with_icon('icon-edit', t(:edit), edit_admin_homepage_slideshow_path, :id => 'edit_slideshow_link', :class => 'button') %></li>
+<% end %>
+
+<div id="homepage-slideshow">
+  <% unless @slideshow.any? %>
+    <div class="no-objects-found">
+      <%= t(:no_images_found) %>.
+    </div>
+  <% else %>
+    <div id='image-list'>
+      <% @slideshow.each do |slide| %>
+        <div class='image-detail'>
+          <div class='image-view'>
+            <%= image_tag slide.image.attachment.url(:product) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

@@ -1,4 +1,4 @@
-.image-detail {
+.image-detail, .slide-detail {
 	display: inline-block;
 	float: left;
 	text-align: center;
@@ -7,12 +7,12 @@
 	position: relative;
 }
 
-.image-detail .image-view {
+.image-detail .image-view, .slide-detail .slide-view {
 	width: 220px;
 	height: 230px;
 }
 
-.image-detail .image-view img {
+.image-detail .image-view img, .slide-detail .slide-view img {
 	width: 90%;
 	height: 90%;
 }
@@ -21,7 +21,7 @@
 	width: 150px;
 }
 
-.image-detail a.remove-image-link {
+.image-detail a.remove-image-link, .slide-detail a.remove-image-link {
 	position: absolute;
 	top: -10px;
 	right: 0;
@@ -30,4 +30,8 @@
 	height: 24px;
 	background: url('../delete-image-button.png');
 	text-indent: 10000px;
+}
+
+.slide-detail input {
+	width: 30px;
 }

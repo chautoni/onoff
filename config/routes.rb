@@ -13,6 +13,11 @@ Onoff::Application.routes.draw do
     get '/admin/products/:product_id/edit_images', :to => 'admin/products#edit_images', :as => :edit_images_admin_product
     put '/admin/products/:product_id/update_images', :to => 'admin/products#update_images', :as => :update_images_admin_product
     post '/admin/products/:product_id/create_image', :to => 'admin/products#create_image', :as => :create_image_admin_product
+    
+    get '/admin/general_settings/homepage', :to => 'admin/general_settings#homepage_slideshow', :as => :list_admin_homepage_slideshow
+    get '/admin/general_settings/edit_homepage', :to => 'admin/general_settings#edit_homepage_slideshow', :as => :edit_admin_homepage_slideshow
+    post '/admin/general_settings/create_slide', :to => 'admin/general_settings#create_slide', :as => :create_homepage_slides
+    post '/admin/general_settings/update_homepage', :to => 'admin/general_settings#update_homepage_slideshow', :as => :update_admin_homepage_slideshow
   end
 
   # Sample of regular route:

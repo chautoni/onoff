@@ -1,0 +1,16 @@
+<% if @slide.valid? %>
+	<% html = %Q(
+		<div class="slide-detail">
+		<div class="slide-view">
+			#{ image_tag @slide.image.attachment.url(:product)}
+		</div>
+		<input id="slide_#{ @slide.id }__destroy" name="slide[#{ @slide.id }][_destroy]" type="hidden" value="0">
+		<a class="remove-image-link" href="#" onclick="remove_fields(this); return false;">remove</a>
+		#{ t(:slide_order) }
+		#{ text_field_tag "slide_#{ @slide.id }_slide_order" }
+		</div>
+	) %>
+	$('#slides-list form').append("<%= escape_javascript(raw(html)) %>");
+<% else %>
+	alert('fail to upload')
+<% end %>

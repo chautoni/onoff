@@ -1,0 +1,40 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:homepage_slideshow) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li><%= link_to_with_icon('icon-save', t(:save), '#', :id => 'save_slideshow_link', :class => 'button') %></li>
+  <li><%= link_to_with_icon('icon-cancel', t(:cancel), list_admin_homepage_slideshow_path, :id => 'cancel_edit_slideshow_link', :class => 'button') %></li>
+<% end %>
+
+<%= form_for Slide.new, :html => { :multipart => true }, :url => create_homepage_slides_path  do |f| %>
+		<div id="slide-uploader">
+			<%= t(:drag_drop_for_upload) %>
+			<%= f.file_field :attachment, :multiple => true, :name => 'slide[image][attachment]', :class => "button", :style => 'display:none' %>
+			<%= link_to_with_icon('icon-upload', t(:upload), '#', :id => 'slide_upload_button', :class => 'button') %>
+		</div>
+<% end %>
+
+<div id="slides-list">
+	<%= form_tag update_admin_homepage_slideshow_path do %>
+		<% @slideshow.each do |slide| %>
+			<% if slide.persisted? %>
+				<div class='slide-detail'>
+					<%= fields_for :slide, slide, :index => slide.id do |builder| %>
+						<div class='slide-view'>
+							<%= image_tag slide.image.attachment.url(:product) %>
+						</div>
+						<%= builder.hidden_field :_destroy, :value => 0 %>
+						<%= link_to_remove "remove", builder %>
+						<%= t(:slide_order) %>
+						<%= builder.text_field :slide_order %>
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+		<%= submit_tag :submit, :style => 'display:none', :id => 'submit-slideshow-form' %>
+	<% end %>
+	<div class='clear'></div>
+</div>

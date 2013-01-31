@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128092401) do
+ActiveRecord::Schema.define(:version => 20130130142908) do
+
+  create_table "slides", :force => true do |t|
+    t.integer  "slide_order"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
