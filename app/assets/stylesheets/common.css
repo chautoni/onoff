@@ -26,12 +26,18 @@ body#default {
 	height: 100%;
 }
 
-.container footer#footer {
+footer#footer {
 	min-width: 960px;
 	border-top: none;
 	display: block;
 	float: none;
 	position: relative;
+	background: #f9f9f9;
+	margin: auto;
+}
+
+.container footer#footer {
+	border-top: none;
 }
 
 nav ul#main-nav-bar {

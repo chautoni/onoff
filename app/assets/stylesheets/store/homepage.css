@@ -19,8 +19,20 @@
 
 #homepage-container {
 	width: 100%;
-	position: absolute;
+	position: relative;
 	top: 110px;
+}
+
+#homepage-footer {
+	position: relative;
+	width: 100%;
+	background: #f9f9f9;
+	text-align: center;
+	margin-top: 110px;
+}
+
+#homepage-footer footer#footer {
+	border-top: none;
 }
 
 #slideshow {
@@ -76,4 +88,37 @@ a.slide-pagination {
 
 a.slide-pagination.selected {
 	color: #ccc;
+}
+
+#our-story {
+	position: relative;
+}
+
+#our-story img {
+	display: inline-block;
+}
+
+#our-story #our-story-container {
+	display: inline-block;
+	width: 517px;
+	height: 517px;
+	background: url('../our-story-background.png');
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	text-align: center;
+}
+
+#our-story #our-story-container #our-story-wrapper {
+	margin: 40px;
+}
+
+#our-story #our-story-container #our-story-wrapper h1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#our-story #our-story-container #our-story-wrapper p {
+	margin: 0;
+	font-size: 14px;
 }
