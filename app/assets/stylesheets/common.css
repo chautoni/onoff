@@ -1,19 +1,42 @@
+body#default {
+	height: 100%;
+	width: 100%;
+	min-width: 960px;
+	overflow: auto;
+}
+
+.container {
+	min-width: 960px;
+}
+
 #header {
 	position: fixed;
 	top: 0px;
 	display: block;
-	height: 150px;
+	height: 110px;
 	margin: 0px;
 	z-index: 10000000;
+	min-width: 960px;
 }
 
-#wrapper {
+.container #wrapper {
 	position: relative;
-	padding-top: 150px;
+	padding-top: 110px;
+	min-width: 960px;
+	height: 100%;
+}
+
+.container footer#footer {
+	min-width: 960px;
+	border-top: none;
+	display: block;
+	float: none;
+	position: relative;
 }
 
 nav ul#main-nav-bar {
 	border-bottom: none;
+	margin-bottom: 0;
 }
 
 ul#main-nav-bar li a.nav-buttons{

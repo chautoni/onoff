@@ -9,7 +9,8 @@
 
 //= require store/spree_core
 //= require store/spree_promo
-
 //= require_tree .
+
 //= require jquery.jqzoom-core-pack
 //= require jquery.jcarousel.min
+//= require jquery.carouFredSel

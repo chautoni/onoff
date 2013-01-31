@@ -1,0 +1,26 @@
+<div id="homepage-header">
+  <%= render :partial => 'spree/shared/header' %>
+</div>
+
+<div id="homepage-container">
+	<div id="slideshow">
+		<ul>
+			<% @slideshow.each do |slide| %>
+				<li><%= image_tag slide.image.attachment.url(:original) %></li>
+			<% end %>	
+		</ul>
+		<a id="slide-prev" class="prev" href="#">&lt;</a>
+		<a id="slide-next" class="next" href="#">&gt;</a>
+		<div id="slide-pager" class="pager"></div>
+	</div>
+
+	<div class="container">
+	  <div id="wrapper" class="row" data-hook>
+	  	<div id="our-story">
+
+	  	</div>
+	  </div>
+	</div>
+
+  <%= render :partial => 'spree/shared/footer' %>
+</div>
