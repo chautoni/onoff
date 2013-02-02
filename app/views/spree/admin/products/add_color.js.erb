@@ -1,0 +1,6 @@
+$('#color-form').html("<%= escape_javascript(raw(render('add_color', product: @product))) %>");
+$('.chosen_field').each(function(index){
+  $(this).append("<option value='<%= @variant.option_value('color') %>'><%= @variant.option_value('color') %></option>");
+});
+$(".chosen_field").trigger("liszt:updated");
+$('.new_color_link').on('click', add_new_color);

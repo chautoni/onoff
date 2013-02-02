@@ -14,7 +14,9 @@
 				<%= link_to_with_icon('icon-upload', t(:upload), '#', :id => 'upload_button', :class => 'button') %>
 			</div>
 	<% end %>
-
+  <div id='color-form' style='display:none;'>
+    <%= render 'add_color', product: @product %>
+  </div>
 	<div id="images-list">
 		<%= form_for [:admin, @product], :method => :put, :html => { :multipart => true }, :url => update_images_admin_product_url(@product) do |f| %>
 			<%= f.fields_for :images, @product_images do |builder| %>

@@ -2,12 +2,12 @@ Spree::Product.class_eval do
 	has_many :images, :as => :viewable, :class_name => Spree::Image, :through => :master, :dependent => :destroy
 	accepts_nested_attributes_for :images, :allow_destroy => true
 	attr_accessible :images, :images_attributes
-	
+
 	DEFAULT_OPTION_TYPES = [COLOR = 'color', SIZE = 'size']
 	after_create :assign_color_and_size
 
   def colors
-  	self.variants.map { |v| v.option_value('color') }.uniq - [nil]
+  	self.variants.map { |v| v.option_value('color') }.uniq.flatten
   end
 
   private
