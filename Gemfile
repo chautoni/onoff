@@ -9,7 +9,7 @@ gem 'pg'
 gem 'thin'
 gem 'haml'
 gem 'rails-i18n'
-
+gem 'rabl'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -42,3 +42,5 @@ gem 'debugger'
 gem 'spree', '1.3.1'
 gem 'spree_gateway', :github => 'spree/spree_gateway', :branch => '1-3-stable'
 gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '1-3-stable'
+gem 'acts-as-taggable-on'
+gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git', :branch => '1-3-stable'

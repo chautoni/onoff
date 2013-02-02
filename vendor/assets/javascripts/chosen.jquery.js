@@ -93,9 +93,9 @@
 }).call(this);
 
 /*
-Chosen source: generate output using 'cake build'
-Copyright (c) 2011 by Harvest
-*/
+   Chosen source: generate output using 'cake build'
+   Copyright (c) 2011 by Harvest
+   */
 
 
 (function() {
@@ -125,6 +125,8 @@ Copyright (c) 2011 by Harvest
       this.activate_action = function(evt) {
         return _this.activate_field(evt);
       };
+      debugger;
+      this.fb_ui_menu = this.options.fb_ui_menu || false;
       this.active_field = false;
       this.mouse_on_container = false;
       this.results_showing = false;
@@ -237,29 +239,29 @@ Copyright (c) 2011 by Harvest
       switch (stroke) {
         case 8:
           if (this.is_multiple && this.backstroke_length < 1 && this.choices > 0) {
-            return this.keydown_backstroke();
-          } else if (!this.pending_backstroke) {
-            this.result_clear_highlight();
-            return this.results_search();
-          }
-          break;
+          return this.keydown_backstroke();
+        } else if (!this.pending_backstroke) {
+          this.result_clear_highlight();
+          return this.results_search();
+        }
+        break;
         case 13:
           evt.preventDefault();
-          if (this.results_showing) {
-            return this.result_select(evt);
-          }
-          break;
+        if (this.results_showing) {
+          return this.result_select(evt);
+        }
+        break;
         case 27:
           if (this.results_showing) {
-            this.results_hide();
-          }
-          return true;
+          this.results_hide();
+        }
+        return true;
         case 9:
-        case 38:
-        case 40:
-        case 16:
-        case 91:
-        case 17:
+          case 38:
+          case 40:
+          case 16:
+          case 91:
+          case 17:
           break;
         default:
           return this.results_search();
@@ -289,15 +291,15 @@ Copyright (c) 2011 by Harvest
 }).call(this);
 
 /*
-Chosen source: generate output using 'cake build'
-Copyright (c) 2011 by Harvest
-*/
+   Chosen source: generate output using 'cake build'
+   Copyright (c) 2011 by Harvest
+   */
 
 
 (function() {
   var $, Chosen, get_side_border_padding, root,
-    __hasProp = {}.hasOwnProperty,
-    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+  __hasProp = {}.hasOwnProperty,
+  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   root = this;
 
@@ -560,8 +562,12 @@ Copyright (c) 2011 by Harvest
           }
         }
       }
-      content+= "<a href='#' class='new_color_link'>+ New Color</a>"
-      content+= "<li style='display:list-item'></li>"
+      
+      if (this.fb_ui_menu == true){
+        content+= "<a href='#' class='new_color_link'>+ New Color</a>"
+        content+= "<li style='display:list-item'></li>"
+      }
+
       this.search_field_disabled();
       this.show_search_field_default();
       this.search_field_scale();
@@ -701,7 +707,7 @@ Copyright (c) 2011 by Harvest
 
     Chosen.prototype.choice_build = function(item) {
       var choice_id, html, link,
-        _this = this;
+      _this = this;
       if (this.is_multiple && this.max_selected_options <= this.choices) {
         this.form_field_jq.trigger("liszt:maxselected", {
           chosen: this
@@ -848,67 +854,67 @@ Copyright (c) 2011 by Harvest
       searchText = this.search_field.val() === this.default_text ? "" : $('<div/>').text($.trim(this.search_field.val())).html();
       regexAnchor = this.search_contains ? "" : "^";
       regex = new RegExp(regexAnchor + searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), 'i');
-      zregex = new RegExp(searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), 'i');
-      eregex = new RegExp('^' + searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") + '$', 'i');
-      exact_result = false;
-      _ref = this.results_data;
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        option = _ref[_i];
-        if (!option.disabled && !option.empty) {
-          if (option.group) {
-            $('#' + option.dom_id).css('display', 'none');
-          } else if (!(this.is_multiple && option.selected)) {
-            found = false;
-            result_id = option.dom_id;
-            result = $("#" + result_id);
-            if (regex.test(option.html)) {
-              found = true;
-              results += 1;
-              if (eregex.test(option.html)) {
-                exact_result = true;
-              }
-            } else if (option.html.indexOf(" ") >= 0 || option.html.indexOf("[") === 0) {
-              parts = option.html.replace(/\[|\]/g, "").split(" ");
-              if (parts.length) {
-                for (_j = 0, _len1 = parts.length; _j < _len1; _j++) {
-                  part = parts[_j];
-                  if (regex.test(part)) {
+        zregex = new RegExp(searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), 'i');
+          eregex = new RegExp('^' + searchText.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") + '$', 'i');
+            exact_result = false;
+            _ref = this.results_data;
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              option = _ref[_i];
+              if (!option.disabled && !option.empty) {
+                if (option.group) {
+                  $('#' + option.dom_id).css('display', 'none');
+                } else if (!(this.is_multiple && option.selected)) {
+                  found = false;
+                  result_id = option.dom_id;
+                  result = $("#" + result_id);
+                  if (regex.test(option.html)) {
                     found = true;
                     results += 1;
+                    if (eregex.test(option.html)) {
+                      exact_result = true;
+                    }
+                  } else if (option.html.indexOf(" ") >= 0 || option.html.indexOf("[") === 0) {
+                    parts = option.html.replace(/\[|\]/g, "").split(" ");
+                    if (parts.length) {
+                      for (_j = 0, _len1 = parts.length; _j < _len1; _j++) {
+                        part = parts[_j];
+                        if (regex.test(part)) {
+                          found = true;
+                          results += 1;
+                        }
+                      }
+                    }
+                  }
+                  if (found) {
+                    if (searchText.length) {
+                      startpos = option.html.search(zregex);
+                      text = option.html.substr(0, startpos + searchText.length) + '</em>' + option.html.substr(startpos + searchText.length);
+                      text = text.substr(0, startpos) + '<em>' + text.substr(startpos);
+                    } else {
+                      text = option.html;
+                    }
+                    result.html(text);
+                    this.result_activate(result);
+                    if (option.group_array_index != null) {
+                      $("#" + this.results_data[option.group_array_index].dom_id).css('display', 'list-item');
+                    }
+                  } else {
+                    if (this.result_highlight && result_id === this.result_highlight.attr('id')) {
+                      this.result_clear_highlight();
+                    }
+                    this.result_deactivate(result);
                   }
                 }
               }
             }
-            if (found) {
-              if (searchText.length) {
-                startpos = option.html.search(zregex);
-                text = option.html.substr(0, startpos + searchText.length) + '</em>' + option.html.substr(startpos + searchText.length);
-                text = text.substr(0, startpos) + '<em>' + text.substr(startpos);
-              } else {
-                text = option.html;
-              }
-              result.html(text);
-              this.result_activate(result);
-              if (option.group_array_index != null) {
-                $("#" + this.results_data[option.group_array_index].dom_id).css('display', 'list-item');
-              }
+            if (results < 1 && searchText.length) {
+              return this.no_results(searchText);
             } else {
-              if (this.result_highlight && result_id === this.result_highlight.attr('id')) {
-                this.result_clear_highlight();
+              if (this.create_option && !exact_result && this.persistent_create_option && searchText.length) {
+                this.show_create_option(searchText);
               }
-              this.result_deactivate(result);
+              return this.winnow_results_set_highlight();
             }
-          }
-        }
-      }
-      if (results < 1 && searchText.length) {
-        return this.no_results(searchText);
-      } else {
-        if (this.create_option && !exact_result && this.persistent_create_option && searchText.length) {
-          this.show_create_option(searchText);
-        }
-        return this.winnow_results_set_highlight();
-      }
     };
 
     Chosen.prototype.winnow_results_clear = function() {
@@ -1054,23 +1060,23 @@ Copyright (c) 2011 by Harvest
       switch (stroke) {
         case 8:
           this.backstroke_length = this.search_field.val().length;
-          break;
+        break;
         case 9:
           if (this.results_showing && !this.is_multiple) {
-            this.result_select(evt);
-          }
-          this.mouse_on_container = false;
-          break;
+          this.result_select(evt);
+        }
+        this.mouse_on_container = false;
+        break;
         case 13:
           evt.preventDefault();
-          break;
+        break;
         case 38:
           evt.preventDefault();
-          this.keyup_arrow();
-          break;
+        this.keyup_arrow();
+        break;
         case 40:
           this.keydown_arrow();
-          break;
+        break;
       }
     };
 

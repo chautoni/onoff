@@ -8,6 +8,10 @@ Onoff::Application.routes.draw do
   mount Spree::Core::Engine, :at => '/'
           # The priority is based upon order of creation:
   # first created -> highest priority.
+  resource :tags, only: [] do
+    get :search_product_tags
+    get :filter
+  end
 
   Spree::Core::Engine.routes.prepend do
     get '/admin/products/:product_id/edit_images', :to => 'admin/products#edit_images', :as => :edit_images_admin_product

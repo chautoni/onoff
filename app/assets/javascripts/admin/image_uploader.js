@@ -1,5 +1,7 @@
 $(function() {
-  $(".chosen_field").chosen();
+  $(".chosen_field").chosen({
+    fb_ui_menu: true
+  });
   $('.new_color_link').on('click',add_new_color);
 
   $(document).on('click', '#upload_button', function(e) {

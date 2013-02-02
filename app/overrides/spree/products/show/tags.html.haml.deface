@@ -1,0 +1,9 @@
+/
+  insert_bottom "[data-hook='product_right_part_wrap']"
+- if !@product.tags.blank?
+  #taxon-crumbs.alpha.columns.five.omega{"data-hook" => ""}
+    %h6.product-section-title Related tags
+    %div{"data-hook" => "product_taxons"}
+      %ul#similar_items_by_taxon{"data-hook" => ""}
+        - @product.tags.each do |tag|
+          %li= link_to tag.name, products_path(:tag => tag.name)
