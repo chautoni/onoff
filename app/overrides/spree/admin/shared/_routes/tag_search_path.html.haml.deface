@@ -1,0 +1,3 @@
+/
+  insert_bottom 'script'
+= raw("Spree.routes.tag_product_search = '#{main_app.search_product_tags_tags_path(format: :json)}';")

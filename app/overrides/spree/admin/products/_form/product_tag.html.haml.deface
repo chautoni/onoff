@@ -1,0 +1,5 @@
+/
+  replace_contents "[data-hook='admin_product_form_additional_fields']"
+= f.field_container :tag_list do
+  = f.label :tag_list, 'Tags'
+  = f.select :tag_list, Spree::Product.all_tags, {}, { multiple: '' }
