@@ -9,10 +9,10 @@
 Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
-  # config.site_name = "Spree Demo Site"
+  config.site_name = "OnOff"
   config.currency = 'VNĐ'
   config.currency_symbol_position = 'after'
-  config.default_country_id = 213
+  config.default_country_id = 219
   config.hide_cents = true
 end
 
