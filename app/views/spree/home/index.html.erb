@@ -5,9 +5,12 @@
 <div id="homepage-container">
 	<div id="slideshow">
 		<ul>
-			<% @slideshow.each do |slide| %>
+			<!--<% @slideshow.each do |slide| %>
 				<li><%= image_tag slide.image.attachment.url(:original) %></li>
-			<% end %>	
+			<% end %>	-->
+			<li><%= image_tag "Slide-0.jpg" %></li>
+			<li><%= image_tag "Slide-1.jpg" %></li>
+			<li><%= image_tag "Slide-2.jpg" %></li>
 		</ul>
 		<a id="slide-prev" class="prev" href="#">&lt;</a>
 		<a id="slide-next" class="next" href="#">&gt;</a>
