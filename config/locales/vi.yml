@@ -323,7 +323,7 @@ vi:
   charge_total: Charge Total
   charged: Charged
   charges: Charges
-  checkout: Checkout
+  checkout: Thanh Toán
   cheque: Cheque
   choose_a_customer: "Choose a customer"
   city: City
@@ -520,7 +520,7 @@ vi:
   issue_number: Issue Number
   item: Item
   item_description: "Item Description"
-  item_total: "Item Total"
+  item_total: "Tổng giỏ hàng"
   last_name: "Last Name"
   last_name_begins_with: "Last Name Begins With"
   learn_more: Learn More
@@ -655,21 +655,21 @@ vi:
   order_processed_successfully: "Your order has been processed successfully"
   order_state:
     # keys correspond to Checkout state names:
-    address: address
+    address: Địa Chỉ
     adjustments: adjustments
     awaiting_return: awaiting return
     canceled: canceled
     cart: cart
-    complete: complete
-    confirm: confirm
-    delivery: delivery
-    payment: payment
+    complete: Hoàn Tất
+    confirm: Kiểm Tra Đơn Hàng
+    delivery: Phương Thức Vận Chuyển
+    payment: Phương Thức Thanh Toán
     resumed: resumed
     returned: returned
     skrill: skrill
-  order_summary: Order Summary
+  order_summary: Tóm Tắt Đơn Hàng
   order_sure_want_to: "Are you sure you want to %{event} this order?"
-  order_total: "Order Total"
+  order_total: "Tổng Đơn Hàng"
   order_total_message: "The total amount charged to your card will be"
   order_updated: "Order Updated"
   orders: Orders
@@ -696,7 +696,7 @@ vi:
   payment: Payment
   payment_actions: "Actions"
   payment_gateway: "Payment Gateway"
-  payment_information: "Payment Information"
+  payment_information: "Phương Thức Thanh Toán"
   payment_method: Payment Method
   payment_methods: Payment Methods
   payment_methods_setting_description: Configure methods customers can use to pay.
@@ -736,7 +736,7 @@ vi:
   proceed_as_guest: "No Thanks, Proceed as Guest"
   process: Process
   product: Product
-  product_details: "Product Details"
+  product_details: "Chi Tiết Sản Phẩm"
   product_group: Product Group
   product_group_invalid: Product Group has invalid scopes
   product_groups: Product Groups
@@ -1125,11 +1125,21 @@ vi:
   zone_setting_description: "Collections of countries, states or other zones to be used in various calculations."
   zones: Zones
 
-  hello: "Hello world"
   drag_drop_for_upload: "Drag and drop anywhere to upload images"
   product_not_found: "Product not found"
   update_product_fail: "Fail to update product"
   update_product_success: "Product has been updated"
   one_color_one_image: "A color can be assigned only one color"
   new_color: "New color"
+
+  number:
+    currency:
+      format:
+        format: "%n %u"
+        unit: "VNĐ"
+        separator: "."
+        delimiter: ","
+        precision: 0
+        significant: false
+        strip_insignificant_zeros: false
 

@@ -3,6 +3,7 @@ Spree::Product.class_eval do
 	has_many :images, :as => :viewable, :class_name => Spree::Image, :through => :master, :dependent => :destroy
 	accepts_nested_attributes_for :images, :allow_destroy => true
 	attr_accessible :images, :images_attributes, :tag_list
+  after_create :make_available
 
 	DEFAULT_OPTION_TYPES = [COLOR = 'color', SIZE = 'size']
 	after_create :assign_color_and_size
@@ -22,5 +23,9 @@ Spree::Product.class_eval do
       option_type = Spree::OptionType.find_by_name(type)
       self.option_types << option_type if option_type
     end
+  end
+
+  def make_available
+    self.update_attributes(:available_on => Time.now)
   end
 end

@@ -17,6 +17,7 @@ body#default {
 	margin: 0px;
 	z-index: 10000000;
 	min-width: 960px;
+	background: #fff;
 }
 
 .container #wrapper {
