@@ -17,6 +17,10 @@
 	position: relative;
 }
 
+#homepage-header header#header nav ul#main-nav-bar {
+	margin-top: 0;
+}
+
 #homepage-container {
 	width: 100%;
 	position: relative;
