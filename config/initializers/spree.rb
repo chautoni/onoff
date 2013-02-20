@@ -15,6 +15,8 @@ Spree.config do |config|
   config.currency_symbol_position = 'after'
   config.default_country_id = 219
   config.hide_cents = true
+  config.checkout_zone = 'Asia'
+  config.address_requires_state = false
 end
 
 Spree.user_class = "Spree::User"

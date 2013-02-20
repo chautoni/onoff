@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 Spree::Admin::ProductsController.class_eval do
-  before_filter :load_data, :only => :edit_images
+  before_filter :load_data, :except => [:update_images]
   before_filter :find_product, :product_colors, :only => [:edit_images, :update_images, :create_image, :add_color]
 
   def edit_images
