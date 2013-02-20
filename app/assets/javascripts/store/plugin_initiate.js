@@ -25,4 +25,17 @@ $(function() {
 			}
 		},
 	});
+
+	if ($('#slideshow ul')) {
+		var width = screen.width;
+		var height;
+
+		$('#slideshow ul li img').css('width', width);
+		height = $($('#slideshow ul li img')[0]).css('height');
+		$('#slideshow ul').css('height', height);
+		$('#slideshow ul li').css('height', height);
+
+		$('#slide-prev').css('top', (parseInt(parseInt(height)/2)+"px"));
+		$('#slide-next').css('top', (parseInt(parseInt(height)/2)+"px"));
+	}
 });

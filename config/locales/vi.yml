@@ -349,7 +349,7 @@ vi:
   country: Country
   country_based: "Country Based"
   create: Create
-  create_a_new_account: "Create a new account"
+  create_a_new_account: "Tạo tài khoản mới"
   create_user_account: Create User Account
   created_successfully: "Created Successfully"
   credit: Credit
@@ -386,6 +386,47 @@ vi:
   depth: Depth
   description: Description
   destroy: Destroy
+  devise:
+    failure:
+      already_authenticated: 'Bạn đã đăng nhập rồi.'
+      unauthenticated: 'Bạn cần phải đăng nhập để tiếp tục.'
+      unconfirmed: 'Bạn cần phải xác nhận tài khoản trước khi tiếp tục.'
+      locked: 'Tài khoản của bạn đã bị khoá.'
+      invalid: 'Email hoặc mật khẩu không chính xác.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Your session expired, please log in again to continue.'
+      inactive: 'Your account was not activated yet.'
+    sessions:
+      signed_in: 'Đăng nhập thành công.'
+      signed_out: 'Đăng xuất thành công.'
+    passwords:
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now logged in.'
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+    confirmations:
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now logged in.'
+    registrations:
+      signed_up: 'Welcome! You have registered successfully.'
+      inactive_signed_up: 'You have registered successfully. However, we could not log you in because your account is %{reason}.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now logged in.'
+      send_paranoid_instructions: 'If your account exists, you will receive an email with instructions about how to unlock it in a few minutes.'
+    omniauth_callbacks:
+      success: 'Successfully authorized from %{kind} account.'
+      failure: 'Could not authorize you from %{kind} because "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
+
   didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
   didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
   discount_amount: "Discount Amount"
@@ -462,7 +503,7 @@ vi:
   flat_rate_per_item: "Flat Rate (per item)"
   flat_rate_per_order: "Flat Rate (per order)"
   flexible_rate: "Flexible Rate"
-  forgot_password: "Forgot Password?"
+  forgot_password: "Quên mật khẩu?"
   from_state: From State
   front_end: Front End
   full_name: "Full Name"
@@ -537,6 +578,8 @@ vi:
   live: "Live"
   loading: Loading
   locale_changed: "Locale Changed"
+  login: "Đăng nhập"
+  login_as_existing: "Đăng nhập vào tài khoản"
   look_for_similar_items: Look for similar items
   maestro_or_solo_cards: Maestro/Solo cards
   mail_delivery_enabled: "Mail delivery is enabled"
@@ -624,7 +667,7 @@ vi:
   option_value: "Option Value"
   option_values: "Option Values"
   options: Options
-  or: or
+  or: "hay"
   or_over_price: "%{price} or over"
   order: Order
   order_adjustments: "Order adjustments"
@@ -685,7 +728,7 @@ vi:
     truncate: "&hellip;"
   paid: Paid
   parent_category: "Parent Category"
-  password: Password
+  password: "Mật khẩu"
   password_reset_instructions: "Password Reset Instructions"
   password_reset_instructions_are_mailed: "Instructions to reset your password have been emailed to you. Please check your email."
   password_reset_token_not_found: "We're sorry, but we could not locate your account. If you are having issues try copying and pasting the URL from your email into your browser or restarting the reset password process."
@@ -874,7 +917,7 @@ vi:
   register: Register as a New User
   register_or_guest: Checkout as Guest or Register
   registration: Registration
-  remember_me: "Remember me"
+  remember_me: "Nhớ mật khẩu. Tự động đăng nhập vào lần sau"
   remove: Remove
   rename: Rename
   reports: Reports

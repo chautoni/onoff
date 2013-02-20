@@ -125,7 +125,7 @@
       this.activate_action = function(evt) {
         return _this.activate_field(evt);
       };
-      debugger;
+      // debugger;
       this.fb_ui_menu = this.options.fb_ui_menu || false;
       this.active_field = false;
       this.mouse_on_container = false;
