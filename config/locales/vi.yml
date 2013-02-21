@@ -295,7 +295,7 @@ vi:
   back_to_zones_list: "Back To Zones List"
   backordered: Backordered
   backordering_is_allowed: "Backordering %{not} allowed"
-  balance_due: "Balance Due"
+  balance_due: "Số Dư Nợ"
   bill_address: "Bill Address"
   billing: Billing
   billing_address: "Billing Address"
@@ -638,9 +638,9 @@ vi:
   new_variant: "New Variant"
   new_zone: "New Zone"
   next: Next
-  no_items_in_cart: ""
+  no_items_in_cart: "Không có sản phẩm nào trong giỏ hàng"
   no_match_found: "No Match Found"
-  no_products_found: "No products found"
+  no_products_found: "Không tìm thấy sản phẩm nào"
   no_results: "No results"
   no_user_found: "No user was found with that email address"
   none: None
@@ -748,17 +748,19 @@ vi:
   payment_processor_choose_link: "our payments page"
   payment_state: Payment State
   payment_states:
-    balance_due: balance due
-    completed: completed
+    balance_due: nợ
+    completed: thanh toán hoàn tất
     checkout: checkout
     credit_owed: credit owed
-    failed: failed
-    paid: paid
+    failed: thanh toán thất bại
+    paid: đã thanh toán
     pending: pending
-    processing: processing
+    processing: đang xử lý
     void: void
   payment_updated: Payment Updated
   payments: Payments
+  paypal_payer_statuses:
+    unverified: "Tài khoản PayPal của người mua chưa được xác nhận."
   pending_payments: Pending Payments
   permalink: Permalink
   phone: Phone
