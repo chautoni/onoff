@@ -82,7 +82,7 @@ module Onoff
     config.assets.initialize_on_precompile = false
 
     config.after_initialize do
-      Rails.configuration.spree.payment_methods << Spree::PaymentMethod::CashOnDelivery
+      Rails.configuration.spree.payment_methods += [Spree::PaymentMethod::CashOnDelivery, Spree::PaymentMethod::BankTransfer]
     end
   end
 end
