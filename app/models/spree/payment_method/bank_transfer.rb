@@ -17,7 +17,6 @@ module Spree
 
     def capture(*args)
       ActiveMerchant::Billing::Response.new(true, "", {}, {})
-      self.order.update_attributes(:shipment_state => 'ready')
     end
 
     def void(*args)

@@ -18,7 +18,7 @@ vi:
     listing: Listing
     new: New
     update: Update
-    cancel: Cancel
+    cancel: Hủy bỏ
   active: "Active"
   activate: "Activate"
   activerecord:
@@ -1124,7 +1124,7 @@ vi:
   under_price: "Under %{price}"
   under_paid: "Under Paid"
   unrecognized_card_type: Unrecognized card type
-  update: Update
+  update: Cập nhật
   update_password: "Update my password and log me in"
   updated_successfully: "Updated Successfully"
   updating: Updating
@@ -1187,4 +1187,41 @@ vi:
         precision: 0
         significant: false
         strip_insignificant_zeros: false
+
+  a_successful_transaction_has_already_been_completed_for_this_token: "A successful transaction has already been completed for this token"
+  ipn_transaction: IPN Transaction
+  unknown_transaction: Unknown Transaction
+  edit_paypal_info: Edit Paypal Express Payment
+  paypal_payment: Paypal Express Payment
+  paypal_txn_id: Transaction Code
+  paypal_capture_complete: Paypal Transaction has been captured.
+  unable_to_capture_paypal: Unable to capture Paypal Transaction.
+  signature: Signature
+  order_not_yet_placed: "Your order has <strong>NOT</strong> been be placed, please review the details and click <strong>Place Order</strong> below to finalize your order."
+  paypal_payment_id: PayPal Payment ID
+  pending_reason: Pending Reason
+  result: Result
+  review: Review
+  no_shipping: No Shipping
+  cart_checkout: Checkout From Cart
+  paypal_account: PayPal Account
+  payer_id: Payer ID
+  payer_country: Country
+  payer_status: Status
+  paypal_payer_statuses:
+    verified: verified
+    unverified: unverified
+  comment: Comment
+  account_details: Account Details
+  finalize:
+    paypalexpress: Capture Payment
+  activerecord:
+     attributes:
+       paypal_payment:
+         amount: Amount
+     models:
+       paypal_payment:
+         one: PayPal Payment
+         other: PayPal Payments
+
 

@@ -17,6 +17,7 @@ Spree.config do |config|
   config.hide_cents = true
   config.checkout_zone = 'Asia'
   config.address_requires_state = false
+  config.auto_capture = true
 end
 
 Spree.user_class = "Spree::User"

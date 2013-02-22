@@ -8,14 +8,20 @@
   <div id="preferences" data-hook>
 
     <fieldset class="general no-border-top">
-      <% key = :site_name
-        type = Spree::Config.preference_type(key) %>
-      <div class="field">
-        <%= label_tag(key, t(key) + ': ') + tag(:br) if type != :boolean %>
-        <%= preference_field_tag(key, Spree::Config[key], :type => type) %>
-        <%= label_tag(key, t(key)) + tag(:br) if type == :boolean %>
+      <% keys = [:site_name, :usd_exchange_rate] %>
+      <% keys.each do |key| %>
+        <% type = Spree::Config.preference_type(key) %>
+        <div class="field">
+          <%= label_tag(key, t(key) + ': ') + tag(:br) if type != :boolean %>
+          <%= preference_field_tag(key, Spree::Config[key], :type => type) %>
+          <%= label_tag(key, t(key)) + tag(:br) if type == :boolean %>
+        </div>
+      <% end %>
+      <div class="form-buttons filter-actions actions" data-hook="buttons">
+        <%= button t(:update), 'icon-refresh' %>
+        <span class="or"><%= t(:or) %></span>
+        <%= link_to_with_icon 'icon-remove', t(:cancel), edit_admin_general_settings_url, :class => 'button' %>
       </div>
-
     </fieldset>
   </div>
 
