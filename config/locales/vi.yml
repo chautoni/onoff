@@ -1188,6 +1188,7 @@ vi:
         significant: false
         strip_insignificant_zeros: false
 
+  the_totals_of_the_cart_item_amounts_do_not_match_order_amounts: "The totals of the cart item amounts do not match order amounts"
   a_successful_transaction_has_already_been_completed_for_this_token: "A successful transaction has already been completed for this token"
   ipn_transaction: IPN Transaction
   unknown_transaction: Unknown Transaction
