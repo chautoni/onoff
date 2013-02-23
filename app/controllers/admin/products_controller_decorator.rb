@@ -4,6 +4,24 @@ Spree::Admin::ProductsController.class_eval do
   before_filter :load_data, :except => [:update_images]
   before_filter :find_product, :product_colors, :only => [:edit_images, :update_images, :create_image, :add_color]
 
+  def new_products
+  end
+
+  def import_products
+    if params[:file]
+      if Spree::Product.support_for_import(params[:file])
+        Spree::Product.import(params[:file])
+        redirect_to admin_products_path, notice: t(:product_imported)
+      else
+        redirect_to new_products_path
+        flash[:error] = t(:file_ext_not_support_for_import)
+      end
+    else
+      redirect_to new_products_path
+      flash[:error] = t(:please_choose_a_file_to_import_product)
+    end
+  end
+
   def edit_images
     respond_with(@product, @product_images)
   end
