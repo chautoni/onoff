@@ -1,0 +1,13 @@
+<div data-hook="admin_shipping_method_form_fields" class="alpha twelve columns">
+  <div class="alpha four columns">
+    <%= f.field_container :name do %>
+      <%= f.label :name, t(:name) %><br />
+      <%= f.text_field :name, :class => 'fullwidth' %>
+      <%= error_message_on :shipping_method, :name %>
+    <% end %>
+  </div>
+  <div data-hook="admin_shipping_method_form_calculator_fields" class="omega six columns">
+    <%= render :partial => 'spree/admin/shared/calculator_fields', :locals => { :f => f } %>
+  </div>
+</div>
+

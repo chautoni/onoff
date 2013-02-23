@@ -36,14 +36,14 @@
             <%= f.number_field :on_hand, :min => 0 %>
           <% end %>
         </div>
-        <div class="omega two columns">
+        <!-- <div class="omega two columns">
           <%= f.field_container :on_demand, :class => ['checkbox'] do %>
             <label>
               <%= f.check_box :on_demand %>
               <%= t(:on_demand) %>
             </label>
           <% end %>
-        </div>
+        </div> -->
 
         <div class="clear"></div>
       <% end %>
@@ -51,12 +51,12 @@
 
   </div>
 
-  <div class="twelve columns alpha omega">
+  <!-- <div class="twelve columns alpha omega">
     <%= f.field_container :taxons do %>
       <%= f.label :taxon_ids, t(:taxons) %><br />
       <%= f.hidden_field :taxon_ids, :value => @product.taxon_ids.join(',') %>
     <% end %>
-  </div>
+  </div> -->
 
   <div class="clear"></div>
 
