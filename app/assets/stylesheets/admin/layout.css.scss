@@ -1,0 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+	color: #666666;
+}
+
+fieldset legend {
+	color: #666666;
+}
+
+#admin-menu {
+		background-color: #000;
+}
+
+#admin-menu li a:hover, #admin-menu li.selected a {
+	background-color: #666;
+}
+
+#admin-menu li a:hover:after, #admin-menu li.selected a:after {
+	border-top: 5px solid #666;
+}
+
+#content-header {
+	background: #eeeeee;
+	border-bottom: 1px solid #cccccc;
+}

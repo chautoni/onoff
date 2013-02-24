@@ -41,7 +41,8 @@
 	list-style: none; 
 	position: absolute; 
 	width: 240px; 
-	left: 0 top: 0; 
+	left: 0; 
+	top: 0; 
 }
 
 #product-thumbnails-slide .overview li{ 
