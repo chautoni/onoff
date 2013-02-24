@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #666666;
 }
 
-fieldset legend {
+fieldset legend, #sidebar .sidebar-title {
 	color: #666666;
 }
 
@@ -18,7 +18,28 @@ fieldset legend {
 	border-top: 5px solid #666;
 }
 
+#sub-menu {
+	background-color: #666;
+}
+
+#sub-menu li.selected a:after, #sub-menu li a:hover:after, #sub-menu #admin-menu li.selected a:after, #admin-menu #sub-menu li.selected a:after {
+	border-top: 5px solid #666;
+}
+
 #content-header {
 	background: #eeeeee;
 	border-bottom: 1px solid #cccccc;
+}
+
+aside#sidebar nav.menu ul.sidebar li a {
+	color: #888;
+}
+
+aside#sidebar nav.menu ul.sidebar li.active a {
+	color: #5498da;
+	border-bottom-color: #5498da;
+}
+
+aside#sidebar nav.menu ul.sidebar li a:hover {
+	color: #5498da;
 }
