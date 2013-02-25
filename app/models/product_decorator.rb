@@ -21,17 +21,21 @@ Spree::Product.class_eval do
   def self.import(file)
     spreadsheet = open_spreadsheet(file)
     header = [:title, :sku, :unit, :count_on_hand] + spreadsheet.row(1).slice(4, spreadsheet.row(1).size)
+    logs = []
     (2..spreadsheet.last_row).each do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
       attrs = parse_spreadsheet_row(row)
       product = find_by_name(attrs[:name]) || new
 
       if attrs[:size] || attrs[:color]
+        variant = product.variants.select{ |variant| variant.option_values.map(&:presentation).sort == [attrs[:color], attrs[:size]].sort }.try(:first) || product.variants.new
         
+        variant.save!
       else
         product.attributes = attrs
         product.save!
       end
+      product.set_property('unit', attrs[:unit])
     end
   end
 
