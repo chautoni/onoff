@@ -290,7 +290,7 @@ vi:
   back_to_states_list: "Back To States List"
   back_to_store: "Go Back To Store"
   back_to_tax_categories_list: "Back To Tax Categories List"
-  back_to_taxonomies_list: "Back To Taxonomies List"
+  back_to_taxonomies_list: "Quay Lại Danh Sách Danh Mục"
   back_to_trackers_list: "Back To Trackers List"
   back_to_zones_list: "Back To Zones List"
   backordered: Backordered
@@ -334,7 +334,7 @@ vi:
   complete_list: "Complete List"
   configuration: Cài Đặt
   configuration_options: "Configuration Options"
-  configurations: Configurations
+  configurations: Cài Đặt
   configure_s3: "Configure S3"
   configured: Configured
   confirm: Confirm
@@ -348,7 +348,7 @@ vi:
   count_of_reduced_by: "count of '%{name}' reduced by %{count}"
   country: Country
   country_based: "Country Based"
-  create: Create
+  create: Tạo
   create_a_new_account: "Tạo tài khoản mới"
   create_user_account: Create User Account
   created_successfully: "Created Successfully"
@@ -636,7 +636,7 @@ vi:
   new_tax_category: "New Tax Category"
   new_tax_rate: "New Tax Rate"
   new_taxon: "New Taxon"
-  new_taxonomy: "New Taxonomy"
+  new_taxonomy: "Thêm Danh Mục"
   new_tracker: New Tracker
   new_user: "New User"
   new_variant: "Thêm màu sắc và size"
@@ -1096,12 +1096,12 @@ vi:
   taxon_edit: Edit Taxon
   taxon_placeholder: "Add a Taxon"
   taxonomy: Taxonomy
-  taxonomies: Taxonomies
+  taxonomies: Danh Mục Sản Phẩm
   taxonomies_setting_description: "Create and manage taxonomies."
-  taxonomy_edit: "Edit taxonomy"
+  taxonomy_edit: "Sửa Danh Mục"
   taxonomy_tree_error: "The requested change has not been accepted and the tree has been returned to its previous state, please try again."
-  taxonomy_tree_instruction: "* Right click a child in the tree to access the menu for adding, deleting or sorting a child."
-  taxons: Taxons
+  taxonomy_tree_instruction: "* Nhấn chuột phải vào một phần tử trong cây danh mục để thêm, xoá, hay sắp xếp lại phần tử đó."
+  taxons: Thuộc Các Danh mục
   test: "Test"
   test_mailer:
     test_email:
@@ -1118,7 +1118,7 @@ vi:
   tracking: Tracking
   transaction: Transaction
   transactions: Transactions
-  tree: Tree
+  tree: Cây
   try_again: "Try Again"
   type: Type
   type_to_search: Type to search
