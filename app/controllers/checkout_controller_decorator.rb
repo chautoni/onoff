@@ -12,7 +12,6 @@ module Spree
       end
 
       opts = balance_numbers(@order, opts)
-
       @gateway = paypal_gateway
 
       if Spree::Config[:auto_capture]
@@ -102,7 +101,7 @@ module Spree
 
     def order_opts(order, payment_method_id, stage)
       items = order.line_items.map do |item|
-        price = (item.price/exchange_rate * 100).to_i # convert for gateway
+        price = item.price > 0 ? ((item.price/exchange_rate/0.96).round(2) * 100).to_i : ((item.price/exchange_rate).round(2) * 100).to_i # convert for gateway
         { :name        => item.variant.product.name.gsub(/<\/?[^>]*>/, ""),
           :description => (item.variant.product.description[0..120].gsub(/<\/?[^>]*>/, "") if item.variant.product.description),
           :number      => item.variant.sku,
@@ -120,7 +119,7 @@ module Spree
             :description => credit.label,
             :sku         => credit.id,
             :quantity    => 1,
-            :amount      => (credit.amount/exchange_rate*100).to_i }
+            :amount      => ((credit.amount/exchange_rate / 0.96).round(2) * 100).to_i }
         end
       end
 
@@ -132,12 +131,12 @@ module Spree
       end
 
       if payment_method.preferred_cart_checkout and (order.shipping_method.blank? or order.ship_total == 0)
-        shipping_cost  = shipping_options[:shipping_options].first[:amount]/exchange_rate
-        order_total    = (order.total/exchange_rate * 100 + (shipping_cost)).to_i
+        shipping_cost  = (shipping_options[:shipping_options].first[:amount]/exchange_rate / 0.96).round(2)
+        order_total    = ((order.total/exchange_rate / 0.96).round(2) * 100 + (shipping_cost)).to_i
         shipping_total = (shipping_cost).to_i
       else
-        order_total    = (order.total/exchange_rate * 100).to_i
-        shipping_total = (order.ship_total/exchange_rate * 100).to_i
+        order_total    = ((order.total/exchange_rate / 0.96).round(2) * 100).to_i
+        shipping_total = ((order.ship_total/exchange_rate / 0.96).round(2) * 100).to_i
       end
 
       opts = { :return_url        => paypal_confirm_order_checkout_url(order, :payment_method_id => payment_method_id),
@@ -145,11 +144,11 @@ module Spree
                :order_id          => order.number,
                :custom            => order.number,
                :items             => items,
-               :subtotal          => ((order.item_total / exchange_rate * 100) + credits_total).to_i,
-               :tax               => ((order.tax_total / exchange_rate + (order.tax_total > 0 ? 0.01 : 0))* 100).to_i,
+               :subtotal          => (((order.item_total / exchange_rate / 0.96).round(2) * 100) + credits_total).to_i,
+               :tax               => (((order.tax_total / exchange_rate / 0.96).round(2) + (order.tax_total > 0 ? 0.01 : 0))* 100).to_i,
                :shipping          => shipping_total,
                :money             => order_total,
-               :max_amount        => (order.total/exchange_rate * 300).to_i}
+               :max_amount        => ((order.total/exchange_rate / 0.96).round(2) * 300).to_i}
 
       if stage == "checkout"
         opts[:handling] = 0
@@ -163,7 +162,7 @@ module Spree
         if payment_method.preferred_cart_checkout
           opts[:handling] = 0
         else
-          opts[:handling] = (order.total/exchange_rate() * 100).to_i - opts.slice(:subtotal, :tax, :shipping).values.sum
+          opts[:handling] = ((order.total/exchange_rate / 0.96).round(2) * 100).to_i - opts.slice(:subtotal, :tax, :shipping).values.sum
         end
       end
       opts
@@ -182,14 +181,14 @@ module Spree
           {
             :default => default,
             :name    => shipping_method.name,
-            :amount  => (shipping_method.cost*100).to_i
+            :amount  => (shipping_method.cost / 0.96 *100).to_i
           }
         end
       else
         shipping_method = @order.shipping_method_id ? ShippingMethod.find(@order.shipping_method_id) : ShippingMethod.all.first
         shipping_default = [{ :default => true,
                               :name => shipping_method.name,
-                              :amount => ((shipping_method.calculator.compute(@order).to_f)/exchange_rate * 100).to_i }]
+                              :amount => (((shipping_method.calculator.compute(@order).to_f)/exchange_rate / 0.96).round(2) * 100).to_i }]
       end
 
       {
@@ -202,10 +201,10 @@ module Spree
 
     def balance_numbers(order, opts)
       if payment_method.preferred_cart_checkout and (order.shipping_method.blank? or order.ship_total == 0)
-        shipping_cost  = shipping_options[:shipping_options].first[:amount] / exchange_rate
+        shipping_cost  = (shipping_options[:shipping_options].first[:amount] / exchange_rate / 0.96).round(2)
         shipping_total = (shipping_cost).to_i
       else
-        shipping_total = (order.ship_total / exchange_rate * 100).to_i
+        shipping_total = ((order.ship_total / exchange_rate * 100 / 0.96).round(2)).to_i
       end
 
       if opts[:shipping] < shipping_total
@@ -214,8 +213,7 @@ module Spree
         opts[:shipping_options].first[:amount] = opts[:shipping] if opts[:shipping_options]
       end
 
-
-      while order.total > opts[:money] * exchange_rate || ((opts[:items].map{ |item| item[:amount]*item[:quantity] }.sum + opts[:shipping]) != opts[:money])
+      while order.total * 100 > opts[:money] * exchange_rate || ((opts[:items].map{ |item| item[:amount]*item[:quantity] }.sum + opts[:shipping]) != opts[:money])
         opts[:items].first[:amount] += 1
         opts[:money] = opts[:items].map{ |item| item[:amount]*item[:quantity] }.sum + opts[:shipping]
       end

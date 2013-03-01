@@ -4,7 +4,6 @@
       <%= f.label :name, t(:name) %><br />
       <%= f.text_field :name, :class => 'fullwidth' %>
       <%= f.hidden_field :zone_id, :value => @asia_id %>
-      <%= f.hidden_field :display_on, :value => "both" %>
       <%= f.hidden_field :shipping_category_id, :value => "" %>
       <%= error_message_on :shipping_method, :name %>
     <% end %>
