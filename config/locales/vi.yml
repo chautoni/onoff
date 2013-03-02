@@ -251,7 +251,7 @@ vi:
   alt_text: Alternative Text
   alternative_phone: Alternative Phone
   amount: Amount
-  analytics_trackers: Analytics Trackers
+  analytics_trackers: Google Analytics
   and: and
   apply: "Apply"
   are_you_sure: "Are you sure?"
@@ -286,7 +286,7 @@ vi:
   back_to_prototypes_list: "Back To Prototypes List"
   back_to_reports_list: "Quay Lại Danh Sách Báo Cáo"
   back_to_shipping_categories: "Back To Shipping Categories"
-  back_to_shipping_methods_list: "Back To Shipping Methods List"
+  back_to_shipping_methods_list: "Quay Lại Danh Sách Phương Thức Giao Hàng"
   back_to_states_list: "Back To States List"
   back_to_store: "Go Back To Store"
   back_to_tax_categories_list: "Back To Tax Categories List"
@@ -301,7 +301,7 @@ vi:
   billing_address: "Billing Address"
   both: Both
   calculator: Calculator
-  calculator_settings_warning: "If you are changing the calculator type, you must save first before you can edit the calculator settings"
+  calculator_settings_warning: "Nếu bạn đổi cách tính, bạn phải lưu lại trước khi bạn có thể chỉnh sửa cách tính mới."
   cancel: huỷ bỏ
   cancel_my_account: Cancel my account
   cancel_my_account_description: "Unhappy?"
@@ -548,7 +548,7 @@ vi:
   maestro_or_solo_cards: Maestro/Solo cards
   mail_delivery_enabled: "Mail delivery is enabled"
   mail_delivery_not_enabled: "Mail delivery is not enabled"
-  mail_methods: Cài Đặt Phương Thức Mail
+  mail_methods: Phương Thức Mail
   mail_server_preferences: Mail Server Preferences
   make_refund: Make refund
   mark_shipped: "Mark Shipped"
@@ -591,7 +591,7 @@ vi:
   new_return_authorization: New Return Authorization
   new_shipment: "New Shipment"
   new_shipping_category: "New Shipping Category"
-  new_shipping_method: "New Shipping Method"
+  new_shipping_method: "Phương Thức Giao Hàng Mới"
   new_state: "New State"
   new_tax_category: "New Tax Category"
   new_tax_rate: "New Tax Rate"
@@ -978,7 +978,7 @@ vi:
   shipping_error: "Shipping Error"
   shipping_instructions: "Shipping Instructions"
   shipping_method: "Shipping Method"
-  shipping_methods: "Shipping Methods"
+  shipping_methods: "Phương Thức Giao Hàng"
   shipping_methods_description: "Manage shipping methods."
   shipping_total: "Shipping Total"
   shop_by_taxonomy: "Shop by %{taxonomy}"
