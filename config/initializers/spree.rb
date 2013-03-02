@@ -20,4 +20,6 @@ Spree.config do |config|
   config.auto_capture = true
 end
 
+I18n.locale = :vi
+
 Spree.user_class = "Spree::User"

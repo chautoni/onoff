@@ -18,6 +18,15 @@ GIT
       spree_core (~> 1.0)
 
 GIT
+  remote: git://github.com/spree/spree_i18n.git
+  revision: b532ef2c73eca1fc9cfe1e736fe73ceb4148934a
+  specs:
+    spree_i18n (1.0.0)
+      i18n (~> 0.6)
+      rails-i18n
+      spree_core
+
+GIT
   remote: git://github.com/spree/spree_paypal_express.git
   revision: 483f6ababa9c8a1c574aad0a948c96cc21a591db
   branch: 1-3-stable
@@ -309,6 +318,7 @@ DEPENDENCIES
   spree (= 1.3.2)
   spree_auth_devise!
   spree_gateway!
+  spree_i18n!
   spree_paypal_express!
   thin
   uglifier (>= 1.0.3)
