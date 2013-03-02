@@ -49,3 +49,4 @@ gem 'spree_auth_devise', :github => 'spree/spree_auth_devise', :branch => '1-3-s
 gem 'acts-as-taggable-on'
 gem 'spree_paypal_express', :git => 'git://github.com/spree/spree_paypal_express.git', :branch => '1-3-stable'
 gem 'newrelic_rpm'
+ruby '1.9.3'
