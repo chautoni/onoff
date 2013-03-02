@@ -46,6 +46,10 @@ module Spree
 
       paypal_account = Spree::PaypalAccount.find_by_payer_id(params[:PayerID])
 
+      # Destroy all payment of orders, as before redirecting to PayPal,
+      # at least an orphan payment will be created, and never being updated later
+      @order.payments.destroy_all
+
       payment = @order.payments.create(
         :amount => ppx_auth_response.params["gross_amount"].to_f * exchange_rate,
         :source => paypal_account,
