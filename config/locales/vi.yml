@@ -18,7 +18,7 @@ vi:
     listing: Listing
     new: New
     update: Update
-    cancel: Hủy bỏ
+    cancel: Cancel
   active: "Active"
   activate: "Activate"
   activerecord:
@@ -55,14 +55,14 @@ vi:
         completed_at: "Ngày Hoàn Tất"
         ip_address: "Địa chỉ IP"
         item_total: "Item Total"
-        number: Mã Đơn Hàng
+        number: "Mã Đơn Hàng"
         special_instructions: "Special Instructions"
-        state: Trạng Thái
-        total: Tổng
-        created_at: Ngày Đặt Hàng
-        payment_state: Trạng Thái Thanh Toán
-        shipment_state: Trạng Thái Giao Hàng
-        email: Email Khách Hàng
+        state: "Trạng Thái Đơn Hàng"
+        total: "Tổng Số Tiền"
+        created_at: "Ngày Tạo"
+        payment_state: "Trạng Thái Thanh Toán"
+        shipment_state: "Trạng Thái Giao Hàng"
+        email: "Email Khách Hàng"
       spree/order/bill_address:
           address1: "Billing address street"
           city: "Billing address city"
@@ -302,7 +302,7 @@ vi:
   both: Both
   calculator: Calculator
   calculator_settings_warning: "Nếu bạn đổi cách tính, bạn phải lưu lại trước khi bạn có thể chỉnh sửa cách tính mới."
-  cancel: huỷ bỏ
+  cancel: Cancel
   cancel_my_account: Cancel my account
   cancel_my_account_description: "Unhappy?"
   canceled: Canceled
@@ -988,9 +988,9 @@ vi:
   show_active: "Show Active"
   show_deleted: "Hiển thị các kết quả đã bị xoá"
   show_incomplete_orders: "Show Incomplete Orders"
-  show_only_complete_orders: "Chỉ hiện thị đơn hàng đã hoàn tất"
+  show_only_complete_orders: "Chỉ hiện thị đơn hàng đã checkout"
   show_out_of_stock_products: "Show out-of-stock products"
-  show_only_unfulfilled_orders: "Chỉ hiển thị đơn hàng chưa hoàn tất"
+  show_only_unfulfilled_orders: "Chỉ hiển thị đơn hàng chưa giao"
   showing_first_n: "Showing first %{n}"
   sign_up: "Sign up"
   site_name: "Tên trang web"
