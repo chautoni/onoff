@@ -285,7 +285,7 @@ vi:
   attachment_path: "Attachments Path"
   attachment_styles: "Paperclip Styles"
   attachment_url: "Attachments URL"
-  authorization_failure: "Authorization Failure"
+  authorization_failure: "Bạn Không Có Quyền Xem Trang Này"
   authorized: Authorized
   availability: "Availability"
   available_on: "Available On"
