@@ -37,7 +37,7 @@ Spree::Admin::ProductsController.class_eval do
       else
         flash[:error] = t(:update_product_fail)
       end
-      redirect_to admin_product_images_url(@product)
+      redirect_to edit_images_admin_product_url(@product)
     end
   end
 

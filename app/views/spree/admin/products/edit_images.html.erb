@@ -3,7 +3,7 @@
 	<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => 'Images'} %>
 	<% content_for :page_actions do %>
 	  <li><%= link_to_with_icon('icon-save', t(:save), '#', :id => 'save_edit_images_link', :class => 'button') %></li>
-	  <li><%= link_to_with_icon('icon-cancel', t(:cancel), admin_product_images_url(@product), :id => 'cancel_edit_images_link', :class => 'button') %></li>
+	  <li><%= link_to_with_icon('icon-cancel', t(:cancel), edit_admin_product_url(@product), :id => 'cancel_edit_images_link', :class => 'button') %></li>
 	<% end %>
 
 	<%= form_for [:admin, @product, @product.images.new], :html => { :multipart => true }, :url => create_image_admin_product_url(@product)  do |f| %>
@@ -19,14 +19,14 @@
   </div>
 	<div id="images-list">
 		<%= form_for [:admin, @product], :method => :put, :html => { :multipart => true }, :url => update_images_admin_product_url(@product) do |f| %>
+			<%= f.submit :submit, :style => 'display:none', :id => 'submit-product-form' %>
 			<%= f.fields_for :images, @product_images do |builder| %>
 			 	<% if builder.object.persisted? %>
 					<%= render :partial => 'edit_image', :locals => { :f => builder } %>
 				<% end %>
 			<% end %>
-			<div class='clear'></div>
-			<%= f.submit :submit, :style => 'display:none', :id => 'submit-product-form' %>
 		<% end %>
+		<div class='clear'></div>
 	</div>
 <% end %>
 
