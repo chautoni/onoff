@@ -1,0 +1,4 @@
+/* This is a hack to not display Jirafe Tab in Admin's configuration sidebar */
+aside#sidebar nav.menu ul.sidebar li:last-child {
+  display: none; 
+}

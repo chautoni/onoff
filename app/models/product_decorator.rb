@@ -14,6 +14,10 @@ Spree::Product.class_eval do
   	self.variants.map { |v| v.option_value('color') }.uniq.flatten
   end
 
+  def sizes
+    self.variants.map { |v| v.option_value('size') }.uniq.flatten
+  end
+
   def self.all_tags
     self.joins(:tags).pluck('tags.name')
   end

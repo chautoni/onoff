@@ -55,7 +55,7 @@ vi:
         completed_at: "Ngày Hoàn Tất"
         ip_address: "Địa chỉ IP"
         item_total: "Item Total"
-        number: "Mã Đơn Hàng"
+        number: Mã Đơn Hàng
         special_instructions: "Special Instructions"
         state: "Trạng Thái Đơn Hàng"
         total: "Tổng Số Tiền"
@@ -136,6 +136,20 @@ vi:
       spree/zone:
         description: Description
         name: Name
+
+      paypal_payment:
+        amount: Amount
+
+      spree/promotion:
+        advertise: Advertise
+        code: Code
+        description: Description
+        event_name: Event Name
+        expires_at: Expires At
+        name: Name
+        path: Path
+        starts_at: Starts At
+        usage_limit: Usage Limit
     models:
       spree/address:
         one: Address
@@ -212,6 +226,10 @@ vi:
       spree/zone:
         one: Zone
         other: Zones
+
+      paypal_payment:
+        one: PayPal Payment
+        other: PayPal Payments
   add: Thêm
   add_category: "Add Category"
   add_country: "Add Country"
@@ -746,11 +764,14 @@ vi:
   proceed_as_guest: "No Thanks, Proceed as Guest"
   process: Process
   product: Sản phẩm
+  product_color: Màu
+  product_size: Size
   product_details: "Chi Tiết Sản Phẩm"
   product_group: Product Group
   product_group_invalid: Product Group has invalid scopes
   product_groups: Product Groups
   product_has_no_description: This product has no description
+  product_imported: "Đã nhập các sản phẩm từ file"
   product_properties: "Các thuộc tính khác"
   product_scopes:
     groups:
@@ -862,7 +883,7 @@ vi:
         description: "Selects all products that have at least one variant with specified property and value(eg. weight:10kg)"
         name: "With property value"
         sentence: with property <em>%s</em> and value <em>%s</em>
-  products: Danh sách sản phẩm
+  products: Sản Phẩm
   products_with_zero_inventory_display: "Products with a zero inventory will %{not} be displayed"
   product_not_available_in_this_currency: "This product is not available in the selected currency."
   properties: Properties
@@ -1192,28 +1213,28 @@ vi:
   account_details: Account Details
   finalize:
     paypalexpress: Capture Payment
-  activerecord:
-     attributes:
-       paypal_payment:
-         amount: Amount
-     models:
-       paypal_payment:
-         one: PayPal Payment
-         other: PayPal Payments
+  # activerecord:
+  #   attributes:
+  #     paypal_payment:
+  #       amount: Amount
+  #   models:
+  #     paypal_payment:
+  #       one: PayPal Payment
+  #       other: PayPal Payments
 
   # Spree Promotion Translation
-  activerecord:
-    attributes:
-      spree/promotion:
-        advertise: Advertise
-        code: Code
-        description: Description
-        event_name: Event Name
-        expires_at: Expires At
-        name: Name
-        path: Path
-        starts_at: Starts At
-        usage_limit: Usage Limit
+  # activerecord:
+  #   attributes:
+  #     spree/promotion:
+  #       advertise: Advertise
+  #       code: Code
+  #       description: Description
+  #       event_name: Event Name
+  #       expires_at: Expires At
+  #       name: Name
+  #       path: Path
+  #       starts_at: Starts At
+  #       usage_limit: Usage Limit
   add_action_of_type: Add action of type
   add_rule_of_type: Add rule of type
   back_to_promotions_list: "Back To Promotions List"

@@ -14,9 +14,10 @@
 
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 
-<%= form_tag import_products_path, :multipart => true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "Import" %>
+<%= form_tag import_products_path, :multipart => true, :class => 'import-products-form' do %>
+  <%= file_field_tag :file, :style => 'display: none;' %>
+  <%= link_to "Choose File", '#', :class => 'button' %>
+  <%= submit_tag "Import", :id => 'import-btn', :style => 'display:none' %>
 <% end %>
 
 <p><strong>Để nhập sản phẩm từ file CSV hay file Excel(xls/xlsx) thành công, vui lòng format file theo như hướng dẫn phía dưới:</strong></p>
