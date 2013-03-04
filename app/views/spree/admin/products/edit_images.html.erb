@@ -22,7 +22,13 @@
 			<%= f.submit :submit, :style => 'display:none', :id => 'submit-product-form' %>
 			<%= f.fields_for :images, @product_images do |builder| %>
 			 	<% if builder.object.persisted? %>
-					<%= render :partial => 'edit_image', :locals => { :f => builder } %>
+			 		<div class='image-detail'>
+						<%= render :partial => 'edit_image', :locals => { :f => builder } %>
+						<p>
+							<%= f.radio_button :cover_image_id, builder.object.id %>
+							<%= f.label "Chọn làm ảnh chính" %>
+						</p>
+				</div>
 				<% end %>
 			<% end %>
 		<% end %>

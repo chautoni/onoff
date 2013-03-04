@@ -27,18 +27,19 @@ Spree::Admin::ProductsController.class_eval do
   end
 
   def update_images
-    used_colors = params[:product][:images_attributes].map { |k,v| v }.map { |e| [e[:color], e[:_destroy]] }.select{ |c| (c[1] != 1) && @product.colors.include?(c[0]) }
-    if used_colors.count != used_colors.uniq.count
-      flash[:error] = t(:one_color_one_image)
-      redirect_to edit_images_admin_product_url(@product)
-    else
+    # used_colors = params[:product][:images_attributes].map { |k,v| v }.map { |e| [e[:color], e[:_destroy]] }.select{ |c| (c[1] != 1) && @product.colors.include?(c[0]) }
+    # if used_colors.count != used_colors.uniq.count
+    #   flash[:error] = t(:one_color_one_image)
+    #   redirect_to edit_images_admin_product_url(@product)
+    # else
+      @product.update_attributes(:cover_image_id => params[:product][:cover_image_id]) if params[:product][:cover_image_id]
       if @product.master.update_attributes(:images_attributes => params[:product][:images_attributes])
         flash[:success] = t(:update_product_success)
       else
         flash[:error] = t(:update_product_fail)
       end
       redirect_to edit_images_admin_product_url(@product)
-    end
+    # end
   end
 
   def create_image

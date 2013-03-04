@@ -4,11 +4,12 @@ Spree::Product.class_eval do
   acts_as_taggable
 	has_many :images, :as => :viewable, :class_name => Spree::Image, :through => :master, :dependent => :destroy
 	accepts_nested_attributes_for :images, :allow_destroy => true
-	attr_accessible :images, :images_attributes, :tag_list, :count_on_hand
+	attr_accessible :images, :images_attributes, :tag_list, :count_on_hand, :cover_image_id
   after_create :make_available, :add_product_property_unit
 
 	DEFAULT_OPTION_TYPES = [COLOR = 'color', SIZE = 'size']
 	after_create :assign_color_and_size
+  after_save :assign_cover_image
 
   def colors
   	self.variants.map { |v| v.option_value('color') }.uniq.flatten
@@ -16,6 +17,11 @@ Spree::Product.class_eval do
 
   def sizes
     self.variants.map { |v| v.option_value('size') }.uniq.flatten
+  end
+
+  def cover_image
+    image = Spree::Image.find(self.cover_image_id) if self.cover_image_id
+    image || self.master.images.first
   end
 
   def self.all_tags
@@ -79,6 +85,10 @@ Spree::Product.class_eval do
       option_type = Spree::OptionType.find_by_name(type)
       self.option_types << option_type if option_type
     end
+  end
+
+  def assign_cover_image
+    self.update_attributes(:cover_image_id => self.master.images.first.id) if !self.cover_image_id && self.master.images.first
   end
 
   def make_available

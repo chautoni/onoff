@@ -87,7 +87,8 @@
       <% @collection.each do |product| %>
           <tr <%= "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
             <td class="align-center product-detail" data-href="<%= edit_admin_product_path(product) %>"><%= product.sku rescue '' %></td>
-            <td class="align-center product-detail" data-href="<%= edit_images_admin_product_path(product) %>"><%= mini_image(product) %></td>
+            <!--<td class="align-center product-detail" data-href="<%= edit_images_admin_product_path(product) %>"><%= mini_image(product) %></td>-->
+            <td class="align-center product-detail" data-href="<%= edit_images_admin_product_path(product) %>"><%= product.cover_image ? image_tag(product.cover_image.attachment.url(:mini)) : mini_image(product) %></td>
             <td class="product-detail" data-href="<%= edit_admin_product_path(product) %>"><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
             <td class="align-center product-detail" data-href="<%= admin_product_variants_path(product) %>"><%= product.try(:colors).join(', ') %></td>
             <td class="align-center product-detail" data-href="<%= admin_product_variants_path(product) %>"><%= product.try(:sizes).join(', ') %></td>

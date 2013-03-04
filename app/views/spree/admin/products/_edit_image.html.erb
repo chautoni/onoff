@@ -1,8 +1,6 @@
-<div class='image-detail'>
-	<div class='image-view'>
-		<%= image_tag f.object.attachment.url(:product) %>
-	</div>
-	<%= f.hidden_field :_destroy, :value => 0 %>
-	<%= link_to_remove "remove", f %>
-  <%= f.select :color, @color_options, {}, { class: 'chosen_field'  } %>
+<div class='image-view'>
+	<%= image_tag f.object.attachment.url(:product) %>
 </div>
+<%= f.hidden_field :_destroy, :value => 0 %>
+<%= link_to_remove "remove", f %>
+<%= f.select :color, @color_options, {}, { class: 'chosen_field'  } %>

@@ -1,8 +1,8 @@
 <% if image %> 
   <%= image_tag image.attachment.url(:product), :itemprop => "image" %>
 <% else %>
-	<% if @product.images.first %>
-		<%= link_to product_image(@product, :itemprop => "image"), @product.images.first.attachment.url(:large), :class => 'jqzoom' %>
+	<% if @product.cover_image %>
+		<%= link_to image_tag(@product.cover_image.attachment.url(:product)), @product.images.first.attachment.url(:large), :class => 'jqzoom' %>
 	<% else %>
 		<%= product_image(@product, :itemprop => "image") %>
 	<% end %>
