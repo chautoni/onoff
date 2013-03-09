@@ -20,24 +20,24 @@ Spree::Ability.class_eval do
       can [:read,:update,:destroy], Spree.user_class, :id => user.id
       can :create, Spree.user_class
       #############################
-      can :read, Order do |order, token|
+      can :read, Spree::Order do |order, token|
         order.user == user || order.token && token == order.token
       end
-      can :update, Order do |order, token|
+      can :update, Spree::Order do |order, token|
         order.user == user || order.token && token == order.token
       end
-      can :create, Order
+      can :create, Spree::Order
 
-      can :read, Address do |address|
+      can :read, Spree::Address do |address|
         address.user == user
       end
 
       #############################
-      can :read, Product
-      can :index, Product
+      can :read, Spree::Product
+      can :index, Spree::Product
       #############################
-      can :read, Taxon
-      can :index, Taxon
+      can :read, Spree::Taxon
+      can :index, Spree::Taxon
       #############################
     end
 
