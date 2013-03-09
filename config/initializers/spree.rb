@@ -18,6 +18,7 @@ Spree.config do |config|
   config.checkout_zone = 'Asia'
   config.address_requires_state = false
   config.auto_capture = true
+  config.track_inventory_levels = false
 end
 
 I18n.locale = :vi
