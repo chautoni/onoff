@@ -19,6 +19,7 @@ Spree.config do |config|
   config.address_requires_state = false
   config.auto_capture = true
   config.track_inventory_levels = false
+  config.allow_guest_checkout = false
 end
 
 I18n.locale = :vi
