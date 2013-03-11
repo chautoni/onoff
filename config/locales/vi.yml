@@ -3,9 +3,95 @@
 # encoding: utf-8
 
 vi:
+  account: Tài Khoản
+  activerecord:
+    attributes:
+      spree/order:
+        checkout_complete: "Checkout Complete"
+        completed_at: "Ngày Hoàn Tất"
+        ip_address: "Địa chỉ IP"
+        item_total: "Item Total"
+        number: Mã Đơn Hàng
+        special_instructions: "Special Instructions"
+        state: "Trạng Thái Đơn Hàng"
+        total: "Tổng Số Tiền"
+        created_at: "Ngày Tạo"
+        payment_state: "Trạng Thái Thanh Toán"
+        shipment_state: "Trạng Thái Vận Chuyển"
+        email: "Email Khách Hàng"
+
+  add_option_value: "Thêm lựa chọn"
+  back_to_mail_methods_list: "Quay Lại Danh Sách Phương Thức Mail"
+  back_to_payment_methods_list: "Quay Lại Danh Sách Phương Thức Thanh Toán"
+  back_to_products_list: "Quay Lại Danh Sách Sảnh Phẩm"
+  back_to_reports_list: "Quay Lại Danh Sách Báo Cáo"
+  back_to_shipping_methods_list: "Quay Lại Danh Sách Phương Thức Vận Chuyển"
+  back_to_taxonomies_list: "Quay Lại Danh Sách Phân Loại"
+  editing_mail_method: Sửa Đổi Phương Thức Mail
+  editing_option_type: "Sửa Đổi Các Lựa Chọn Cho"
+  editing_payment_method: Sửa Đổi Phương Thức Thanh Toán
+  file_ext_not_support_for_import: "Hệ thống chỉ hỗ trợ file CSV và Excel (xls hoặc xlsx)."
+  first_name_begins_with: "Tên Khách Hàng Bắt Đầu Với"
+  filter_results: "Lọc kết quả"
+  homepage_slideshow: "Slideshow Trang Chủ"
+  import_products: "Nhập Sản Phẩm Mới Từ File"
+  item_total: "Tổng giỏ hàng"
+  last_name_begins_with: "Họ Khách Hàng Bắt Đầu Với"
+  listing_products: "Danh Sách Sản Phẩm"
+  mail_methods: Phương Thức Mail
+  new_mail_method: Phương Thức Mail Mới
+  new_shipping_method: "Phương Thức Vận Chuyển Mới"
+  new_variant: "Thêm màu sắc và size"
+  no_items_in_cart: "Giỏ hàng trống"
+  no_products_found: "Không tìm thấy sản phẩm nào"
+  no_results: "Không tìm thấy kết quả nào"
   note: "Ghi chú"
+  option_types: "Các lựa chọn cho Màu sắc và Size"
+  option_values: "Danh sách các lựa chọn"
+  order_state:
+    # keys correspond to Checkout state names:
+    address: Địa Chỉ
+    adjustments: adjustments
+    awaiting_return: awaiting return
+    canceled: canceled
+    cart: cart
+    complete: Hoàn Tất
+    confirm: Kiểm Tra Đơn Hàng
+    delivery: Phương Thức Vận Chuyển
+    payment: Phương Thức Thanh Toán
+    resumed: resumed
+    returned: returned
+    skrill: skrill
+  order_total: "Tổng Đơn Hàng"
+  overview: Tổng quan
+  payment_states:
+    balance_due: nợ
+    completed: thanh toán hoàn tất
+    checkout: checkout
+    credit_owed: credit owed
+    failed: thanh toán thất bại
+    paid: đã thanh toán
+    pending: pending
+    processing: đang xử lý
+    void: void
+  paypal_payer_statuses:
+    unverified: "Tài khoản PayPal của người mua chưa được xác nhận."
+  please_choose_a_file_to_import_product: "Vui lòng chọn file để nhập sản phẩm."
+  presentation: Hiển thị
   product_color: Màu
+  product_imported: "Đã nhập các sản phẩm từ file"
   product_size: Size
+  show_deleted: "Hiển thị các kết quả đã bị xoá"
+  show_only_complete_orders: "Chỉ hiện thị đơn hàng đã checkout"
+  slide_order: "Thứ Tự Slide"
+  taxon_placeholder: "Phân loại sản phẩm vào một hoặc nhiều danh mục"
   usd_exchange_rate: "Tỉ giá USD"
   usd_exchange_rate_at_the_time: "Tỉ giá USD khi giao dịch"
-  '.abc': 'askgaskskahklahgkh'
+  variants: Màu sắc và Size
+
+  drag_drop_for_upload: "Kéo thả các file hình ảnh vào trình duyệt để upload"
+  product_not_found: "Không tìm thấy sản phẩm"
+  update_product_fail: "Cập nhật sản phẩm không thành công"
+  update_product_success: "Cập nhật sản phẩm thành công"
+  one_color_one_image: "Một màu sắc chỉ có thể có một hình đại diện"
+  new_color: "Màu mới"
