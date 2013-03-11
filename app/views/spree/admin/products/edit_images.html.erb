@@ -26,7 +26,7 @@
 						<%= render :partial => 'edit_image', :locals => { :f => builder } %>
 						<p>
 							<%= f.radio_button :cover_image_id, builder.object.id %>
-							<%= f.label "Chọn làm ảnh chính" %>
+							<%= f.label t(:make_cover_image) %>
 						</p>
 				</div>
 				<% end %>

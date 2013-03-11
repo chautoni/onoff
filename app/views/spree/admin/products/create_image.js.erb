@@ -7,7 +7,6 @@
   		</div>
   		<input id="product_images_attributes_#{ id }__destroy" name="product[images_attributes][#{ id }][_destroy]" type="hidden" value="0">
   		<a class="remove-image-link" href="#" onclick="remove_fields(this); return false;">remove</a>
-      #{ select_tag "product_images_attributes_#{ id }_color", options_for_select(@color_options), { :name => "product[images_attributes][#{ id }][color]", :class => 'chosen_field' } }
   		<p>
         #{ radio_button_tag "product[cover_image_id]", @image.id }
         #{ label_tag "Chọn làm ảnh chính" }

@@ -39,6 +39,7 @@ vi:
   last_name_begins_with: "Họ Khách Hàng Bắt Đầu Với"
   listing_products: "Danh Sách Sản Phẩm"
   mail_methods: Phương Thức Mail
+  make_cover_image: "Chọn làm ảnh chính"
   new_mail_method: Phương Thức Mail Mới
   new_shipping_method: "Phương Thức Vận Chuyển Mới"
   new_variant: "Thêm màu sắc và size"
@@ -78,6 +79,7 @@ vi:
     unverified: "Tài khoản PayPal của người mua chưa được xác nhận."
   please_choose_a_file_to_import_product: "Vui lòng chọn file để nhập sản phẩm."
   presentation: Hiển thị
+  price: Giá
   product_color: Màu
   product_imported: "Đã nhập các sản phẩm từ file"
   product_size: Size
