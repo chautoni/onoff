@@ -1,0 +1,11 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+# encoding: utf-8
+
+vi:
+  note: "Ghi chú"
+  product_color: Màu
+  product_size: Size
+  usd_exchange_rate: "Tỉ giá USD"
+  usd_exchange_rate_at_the_time: "Tỉ giá USD khi giao dịch"
+  '.abc': 'askgaskskahklahgkh'
