@@ -22,6 +22,7 @@ vi:
 
   add_option_value: "Thêm lựa chọn"
   back_to_mail_methods_list: "Quay Lại Danh Sách Phương Thức Mail"
+  back_to_option_types_list: "Quay Lại"
   back_to_payment_methods_list: "Quay Lại Danh Sách Phương Thức Thanh Toán"
   back_to_products_list: "Quay Lại Danh Sách Sảnh Phẩm"
   back_to_reports_list: "Quay Lại Danh Sách Báo Cáo"

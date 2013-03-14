@@ -1,5 +1,5 @@
 <div data-hook="admin_variant_form_fields" class="label-block left six columns alpha">
-  
+
   <div data-hook="variants">
     <% @product.options.each do |option| %>
       <div class="field" data-hook="presentation">
@@ -16,11 +16,6 @@
         <% end %>
       </div>
     <% end %>
-
-    <div class="field" data-hook="sku">
-      <%= f.label :sku, t(:sku) %>
-      <%= f.text_field :sku, :class => 'fullwidth' %>
-    </div>
 
     <div class="field" data-hook="price">
       <%= f.label :price, t(:price) %>

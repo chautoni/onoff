@@ -3,8 +3,8 @@
 <% content_for :page_title do %>
   <% name = case @option_type.name
     when 'color' then 'Màu sắc'
-    when 'size' then 'Size' 
-    else @option_type.name 
+    when 'size' then 'Size'
+    else @option_type.name
   end%>
   <%= t(:editing_option_type) %> <span class="green">"<%= name %>"</span>
 <% end %>
@@ -13,7 +13,7 @@
   <li>
     <span id="new_add_option_value" data-hook>
       <%= link_to_add_fields t(:add_option_value), "tbody#option_values", :class => 'button icon-plus' %>
-    </span>      
+    </span>
   </li>
   <li>
     <%= button_link_to t(:back_to_option_types_list), spree.admin_option_types_path, :icon => 'icon-arrow-left' %>
@@ -25,12 +25,12 @@
 <%= form_for [:admin, @option_type] do |f| %>
   <fieldset>
     <legend align="center"><%= t(:option_values) %></legend>
-    
+
     <table class="index sortable" data-hook data-sortable-link="<%= update_values_positions_admin_option_types_url %>">
       <thead data-hook="option_header">
         <tr>
           <th colspan="2"><%= t(:name) %></th>
-          <th><%= t(:display) %></th>
+          <th><%= t(:sku) %></th>
           <th class="actions"></th>
         </tr>
       </thead>
@@ -41,8 +41,23 @@
             <td class="actions"></td>
           </tr>
         <% else %>
-          <%= f.fields_for :option_values do |option_value_form| %>
-            <%= render :partial => 'option_value_fields', :locals => { :f => option_value_form } %>
+          <%= f.fields_for :option_values, @option_type.option_values.new do |option_value_form| %>
+            <%= render(:partial => 'option_value_fields', :locals => { :f => option_value_form }) %>
+          <% end %>
+        <% end %>
+      </tbody>
+      <tbody>
+        <% unless @option_type.option_values.empty? %>
+          <% @option_type.option_values.each do  |option_value| %>
+            <% if option_value.persisted? %>
+              <tr class="option_value fields" id="spree_<%= dom_id(f.object) %>"  data-hook="option_value" class="<%= cycle('odd', 'even')%>">
+                <td class="no-border">
+                  <span class="handle"></span>
+                </td>
+                <td class="name"><%= option_value.name %></td>
+                <td class="presentation"><%= option_value.presentation %></td>
+              </tr>
+            <% end %>
           <% end %>
         <% end %>
       </tbody>
