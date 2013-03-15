@@ -6,6 +6,8 @@ vi:
   account: Tài Khoản
   activerecord:
     attributes:
+      spree/payment:
+        amount: Số tiền
       spree/order:
         checkout_complete: "Checkout Complete"
         completed_at: "Ngày Hoàn Tất"
@@ -20,20 +22,30 @@ vi:
         shipment_state: "Trạng Thái Vận Chuyển"
         email: "Email Khách Hàng"
 
+  add_to_cart: "Thêm Vào Giỏ Hàng"
   add_option_value: "Thêm lựa chọn"
+  back_to_adjustments_list: "Quay Lại Danh Sách Điều Chỉnh"
   back_to_mail_methods_list: "Quay Lại Danh Sách Phương Thức Mail"
+  back_to_orders_list: "Quay Lại Liệt Kê Đơn Hàng"
   back_to_option_types_list: "Quay Lại"
   back_to_payment_methods_list: "Quay Lại Danh Sách Phương Thức Thanh Toán"
   back_to_products_list: "Quay Lại Danh Sách Sảnh Phẩm"
   back_to_reports_list: "Quay Lại Danh Sách Báo Cáo"
   back_to_shipping_methods_list: "Quay Lại Danh Sách Phương Thức Vận Chuyển"
   back_to_taxonomies_list: "Quay Lại Danh Sách Phân Loại"
+  checkout: Thực hiệnt thanh toán
+  currency: Tiền Tệ
+  date_completed: Ngày Hoàn Tất
   editing_mail_method: Sửa Đổi Phương Thức Mail
   editing_option_type: "Sửa Đổi Các Lựa Chọn Cho"
   editing_payment_method: Sửa Đổi Phương Thức Thanh Toán
+  empty_cart: Làm rỗng giỏ hàng
   file_ext_not_support_for_import: "Hệ thống chỉ hỗ trợ file CSV và Excel (xls hoặc xlsx)."
   first_name_begins_with: "Tên Khách Hàng Bắt Đầu Với"
   filter_results: "Lọc kết quả"
+  guest_checkout_label: Khách hàng
+  guest_checkout_yes: Chưa đăng kí tài khoản
+  guest_checkout_no: Đã đăng kí tài khoản
   homepage_slideshow: "Slideshow Trang Chủ"
   import_products: "Nhập Sản Phẩm Mới Từ File"
   item_total: "Tổng giỏ hàng"
@@ -45,37 +57,40 @@ vi:
   new_shipping_method: "Phương Thức Vận Chuyển Mới"
   new_variant: "Thêm màu sắc và size"
   no_items_in_cart: "Giỏ hàng trống"
+  no_mail_methods_defined: Chưa có phương thức mail nào
   no_products_found: "Không tìm thấy sản phẩm nào"
   no_results: "Không tìm thấy kết quả nào"
   note: "Ghi chú"
   option_types: "Các lựa chọn cho Màu sắc và Size"
   option_values: "Danh sách các lựa chọn"
+  order_information: Thông Tin Đơn Hàng
   order_state:
     # keys correspond to Checkout state names:
     address: Địa Chỉ
-    adjustments: adjustments
-    awaiting_return: awaiting return
-    canceled: canceled
-    cart: cart
+    adjustments: Điều chỉnh
+    awaiting_return: Đợi quay lại
+    canceled: Đã huỷ
+    cart: Chưa checkout
     complete: Hoàn Tất
     confirm: Kiểm Tra Đơn Hàng
     delivery: Phương Thức Vận Chuyển
     payment: Phương Thức Thanh Toán
-    resumed: resumed
-    returned: returned
-    skrill: skrill
+    resumed: Đã tiếp tục
+    returned: Đã quay lại
+    # skrill: skrill
   order_total: "Tổng Đơn Hàng"
   overview: Tổng quan
+  payment_state: Trạng thái thanh toán
   payment_states:
     balance_due: nợ
-    completed: thanh toán hoàn tất
-    checkout: checkout
-    credit_owed: credit owed
-    failed: thanh toán thất bại
+    completed: hoàn tất
+    checkout: đã checkout
+    credit_owed: dư
+    failed: thất bại
     paid: đã thanh toán
-    pending: pending
+    pending: đang chờ xử lý
     processing: đang xử lý
-    void: void
+    void: vô hiệu
   paypal_payer_statuses:
     unverified: "Tài khoản PayPal của người mua chưa được xác nhận."
   please_choose_a_file_to_import_product: "Vui lòng chọn file để nhập sản phẩm."
@@ -84,13 +99,35 @@ vi:
   product_color: Màu
   product_imported: "Đã nhập các sản phẩm từ file"
   product_size: Size
+  quantity_returned: Số lượng đã trả về
+  return_quantity: Số lượng muốn trả về
+  save: Lưu
+  ship: Giao Hàng
+  shipment_states:
+    backorder: đặt trước
+    partial: vận chuyển một phần
+    pending: đang chờ xử lý
+    ready: sẵn sàng
+    shipped: đã vận chuyển
+  shopping_cart: Giỏ hàng
   show_deleted: "Hiển thị các kết quả đã bị xoá"
   show_only_complete_orders: "Chỉ hiện thị đơn hàng đã checkout"
   slide_order: "Thứ Tự Slide"
+  spree:
+    date: Ngày
+    time: Giờ
+  state_names:
+    backorder: Đặt trước
+    partial: Vận chuyển một phần
+    pending: Đang chờ xử lý
+    ready: Sẵn sàng
+    shipped: Đã vận chuyển
+  subtotal: "Tổng Tạm"
   taxon_placeholder: "Phân loại sản phẩm vào một hoặc nhiều danh mục"
   usd_exchange_rate: "Tỉ giá USD"
   usd_exchange_rate_at_the_time: "Tỉ giá USD khi giao dịch"
   variants: Màu sắc và Size
+  your_cart_is_empty: "Giỏ hàng rỗng"
 
   drag_drop_for_upload: "Kéo thả các file hình ảnh vào trình duyệt để upload"
   product_not_found: "Không tìm thấy sản phẩm"
