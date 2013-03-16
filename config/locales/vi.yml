@@ -68,7 +68,7 @@ vi:
     # keys correspond to Checkout state names:
     address: Địa Chỉ
     adjustments: Điều chỉnh
-    awaiting_return: Đợi quay lại
+    awaiting_return: Đợi trả lại
     canceled: Đã huỷ
     cart: Chưa checkout
     complete: Hoàn Tất
@@ -76,7 +76,7 @@ vi:
     delivery: Phương Thức Vận Chuyển
     payment: Phương Thức Thanh Toán
     resumed: Đã tiếp tục
-    returned: Đã quay lại
+    returned: Đã trả lại
     # skrill: skrill
   order_total: "Tổng Đơn Hàng"
   overview: Tổng quan
