@@ -8,6 +8,16 @@ vi:
     attributes:
       spree/payment:
         amount: Số tiền
+      spree/promotion:
+        advertise: Quảng Cáo
+        code: Mã Code
+        description: Mô tả
+        event_name: Loại sự kiện
+        expires_at: Ngày hết hạn
+        name: Tên
+        path: Địa chỉ đường dẫn
+        starts_at: Ngày bắt đầu
+        usage_limit: Giới hạn sử dụng
       spree/order:
         checkout_complete: "Checkout Complete"
         completed_at: "Ngày Hoàn Tất"
@@ -24,41 +34,66 @@ vi:
 
   add_to_cart: "Thêm Vào Giỏ Hàng"
   add_option_value: "Thêm lựa chọn"
+  add_promotion_action_of_type: Thêm cách tính thuộc loại
+  add_promotion_rule_of_type: "Thêm điều kiện thuộc loại"
   back_to_adjustments_list: "Quay Lại Danh Sách Điều Chỉnh"
   back_to_mail_methods_list: "Quay Lại Danh Sách Phương Thức Mail"
   back_to_orders_list: "Quay Lại Liệt Kê Đơn Hàng"
   back_to_option_types_list: "Quay Lại"
   back_to_payment_methods_list: "Quay Lại Danh Sách Phương Thức Thanh Toán"
   back_to_products_list: "Quay Lại Danh Sách Sảnh Phẩm"
+  back_to_promotions_list: Quay Lại Danh Sách Khuyến Mãi
   back_to_reports_list: "Quay Lại Danh Sách Báo Cáo"
   back_to_shipping_methods_list: "Quay Lại Danh Sách Phương Thức Vận Chuyển"
   back_to_taxonomies_list: "Quay Lại Danh Sách Phân Loại"
   checkout: Thực hiệnt thanh toán
   currency: Tiền Tệ
+  current_promotion_usage: 'Số lần đã sử dụng hiện tại %{count}'
   date_completed: Ngày Hoàn Tất
   editing_mail_method: Sửa Đổi Phương Thức Mail
   editing_option_type: "Sửa Đổi Các Lựa Chọn Cho"
   editing_payment_method: Sửa Đổi Phương Thức Thanh Toán
-  empty_cart: Làm rỗng giỏ hàng
+  editing_promotion: Sửa Đổi Khuyến Mãi
+  empty_cart: Làm rỗng giỏ hàngevents
+  events:
+    spree:
+      cart:
+        add: Thêm vào giỏ hàng
+      order:
+        contents_changed: Đơn hàng có thay đổi
+      user:
+        signup: Khách hàng đăng nhập
+      page_view: Xem một trang cố định
   file_ext_not_support_for_import: "Hệ thống chỉ hỗ trợ file CSV và Excel (xls hoặc xlsx)."
   first_name_begins_with: "Tên Khách Hàng Bắt Đầu Với"
   filter_results: "Lọc kết quả"
+  free_shipping: Miễn phí vận chuyển
   guest_checkout_label: Khách hàng
   guest_checkout_yes: Chưa đăng kí tài khoản
   guest_checkout_no: Đã đăng kí tài khoản
   homepage_slideshow: "Slideshow Trang Chủ"
   import_products: "Nhập Sản Phẩm Mới Từ File"
   item_total: "Tổng giỏ hàng"
+  item_total_rule:
+    operators:
+      gt: lớn hơn
+      gte: lớn hơn hoặc bằng
+  landing_page_rule:
+    path: Địa chỉ đường dẫn
   last_name_begins_with: "Họ Khách Hàng Bắt Đầu Với"
   listing_products: "Danh Sách Sản Phẩm"
   mail_methods: Phương Thức Mail
   make_cover_image: "Chọn làm ảnh chính"
-  new_mail_method: Phương Thức Mail Mới
+  new_mail_method: Phương Thức Mail Mớiprom
+  new_promotion: Khuyến Mãi Mới
   new_shipping_method: "Phương Thức Vận Chuyển Mới"
   new_variant: "Thêm màu sắc và size"
   no_items_in_cart: "Giỏ hàng trống"
   no_mail_methods_defined: Chưa có phương thức mail nào
   no_products_found: "Không tìm thấy sản phẩm nào"
+  no_promotion_actions_added: Chưa có cách tính khuyến mãi nào được áp dụng
+  no_promotion_rules_added: Chưa có điều kiện khuyến mãi nào được áp dụng
+  no_promotions_found: Chưa có khuyến mãi nào
   no_results: "Không tìm thấy kết quả nào"
   note: "Ghi chú"
   option_types: "Các lựa chọn cho Màu sắc và Size"
@@ -68,7 +103,7 @@ vi:
     # keys correspond to Checkout state names:
     address: Địa Chỉ
     adjustments: Điều chỉnh
-    awaiting_return: Đợi trả lại
+    awaiting_return: Đợi hoàn lại
     canceled: Đã huỷ
     cart: Chưa checkout
     complete: Hoàn Tất
@@ -76,7 +111,7 @@ vi:
     delivery: Phương Thức Vận Chuyển
     payment: Phương Thức Thanh Toán
     resumed: Đã tiếp tục
-    returned: Đã trả lại
+    returned: Đã hoàn lại
     # skrill: skrill
   order_total: "Tổng Đơn Hàng"
   overview: Tổng quan
@@ -93,14 +128,56 @@ vi:
     void: vô hiệu
   paypal_payer_statuses:
     unverified: "Tài khoản PayPal của người mua chưa được xác nhận."
+  percent_per_item: Phần trăm theo từng món hàng
   please_choose_a_file_to_import_product: "Vui lòng chọn file để nhập sản phẩm."
   presentation: Hiển thị
   price: Giá
   product_color: Màu
+  product_rule:
+    choose_products: Chọn sản phẩm
+    label: "Đơn hàng phải chứa %{select} những sản phẩm này"
+    match_any: ít nhất một
+    match_all: tất cả
+    product_source:
+      group: From product group
+      manual: Manually choose
   product_imported: "Đã nhập các sản phẩm từ file"
   product_size: Size
-  quantity_returned: Số lượng đã trả về
-  return_quantity: Số lượng muốn trả về
+  promotion_action_types:
+    create_adjustment:
+      name: Tạo điều chỉnh
+      description: Tạo điều chỉnh khuyến mãi cho đơn hàng
+    create_line_items:
+      name: Create line items
+      description: Populates the cart with the specified quantity of variant
+  promotion_actions: Cách tính khuyến mãi
+  promotion_form:
+    match_policies:
+      all: Thoả tất cả điều kiện
+      any: Thoả một trong các điều kiện
+  promotion_rule_types:
+    first_order:
+      name: Mua hàng lần đầu tiên
+      description: "Phải là lần mua hàng đầu tiên của khách hàng"
+    item_total:
+      name: Tổng hoá đơn
+      description: Tổng hoá đơn phải đáp ứng một số điều kiện nhất định
+    landing_page:
+      name: Vào một trang web
+      description: Khách hàng chỉ cần vào một trang web được đính sẵn
+    product:
+      name: Sản phẩm
+      description: Đơn hàng có chứa một hoặc nhiều sản phẩm nhất định
+    user:
+      name: Người dùng
+      description: Chỉ áp dụng cho một số người dùng nhất định
+    user_logged_in:
+      name: Người dùng đăng nhập
+      description: Chỉ áp dụng cho những người dùng có tài khoản
+  promotion_rules: Điều kiện áp dụng khuyến mãi
+  promotions: Khuyến Mãi
+  quantity_returned: Số lượng đã hoàn lại
+  return_quantity: Số lượng đã hoàn lại
   save: Lưu
   ship: Giao Hàng
   shipment_states:
@@ -116,6 +193,8 @@ vi:
   spree:
     date: Ngày
     time: Giờ
+  spree/order:
+    coupon_code: Mã Coupon
   state_names:
     backorder: Đặt trước
     partial: Vận chuyển một phần
@@ -127,6 +206,8 @@ vi:
   usd_exchange_rate: "Tỉ giá USD"
   usd_exchange_rate_at_the_time: "Tỉ giá USD khi giao dịch"
   variants: Màu sắc và Size
+  user_rule:
+    choose_users: Chọn người dùng
   your_cart_is_empty: "Giỏ hàng rỗng"
 
   drag_drop_for_upload: "Kéo thả các file hình ảnh vào trình duyệt để upload"
