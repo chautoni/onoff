@@ -1,53 +1,44 @@
-<div id="homepage-header">
-  <%= render :partial => 'spree/shared/header' %>
-</div>
-
-<div id="homepage-container">
-	<div id="slideshow">
-		<ul>
+<% content_for :full_width_slide do %>
+  <div id="slideshow">
+  	<ul>
 			<!--<% @slideshow.each do |slide| %>
 				<li><%= image_tag slide.image.attachment.url(:original) %></li>
 			<% end %>	-->
-			<li><%= image_tag "Slide-0.jpg" %></li>
-			<li><%= image_tag "Slide-1.jpg" %></li>
-			<li><%= image_tag "Slide-2.jpg" %></li>
+			<li><%= image_tag "homepage/slide-0.jpg" %></li>
 		</ul>
 		<a id="slide-prev" class="prev" href="#">&lt;</a>
 		<a id="slide-next" class="next" href="#">&gt;</a>
 		<div id="slide-pager" class="pager"></div>
 	</div>
+<% end %>
 
-	<div class="container">
-	  <div id="wrapper" class="row" data-hook>
-	  	<div id="our-story">
-	  		<%= image_tag 'our-story-photo.jpg' %>
-	  		<div id="our-story-container">
-	  			<div id="our-story-wrapper">
-	  				<h1>Our Story</h1>
-		  			<p>Lorem ipsum dolor sit amet,</p>
-				    <p>consectetus adipiscing elit. Suspendisse </p>
-				    <p>tempor justo nec enim imperdiet mollis. </p>
-				    <p>Nam volutpat lacinia accumsan Vestibulum </p>
-				    <p>ante ipsum primisin faucibus orci luctus </p>
-				    <p>et ultrices posuere cubilia Curae; lorem </p>
-				    <p>ipsum dolor sit amet, consectetur adipis</p>
-				    <p>cing elit. Aliquam eu tortor vel nibh fringilla </p>
-				    <p>pulvinar. Proin sit amet nibh odio, </p>
-				  	<p>quis semper diam. Maecenas a </p>
-				  </div>
-	  		</div>
-	  	</div>
+<div class="container">
+  <div id="wrapper" class="row" data-hook>
+  	<div id="our-story">
+  		<%= image_tag 'our-story-photo.jpg' %>
+  		<div id="our-story-container">
+  			<div id="our-story-wrapper">
+  				<h1 style='font-family:KnockMiddle'>Our Story</h1>
+	  			<p>Lorem ipsum dolor sit amet,</p>
+			    <p>consectetus adipiscing elit. Suspendisse </p>
+			    <p>tempor justo nec enim imperdiet mollis. </p>
+			    <p>Nam volutpat lacinia accumsan Vestibulum </p>
+			    <p>ante ipsum primisin faucibus orci luctus </p>
+			    <p>et ultrices posuere cubilia Curae; lorem </p>
+			    <p>ipsum dolor sit amet, consectetur adipis</p>
+			    <p>cing elit. Aliquam eu tortor vel nibh fringilla </p>
+			    <p>pulvinar. Proin sit amet nibh odio, </p>
+			  	<p>quis semper diam. Maecenas a </p>
+			  </div>
+  		</div>
+  	</div>
 
-	  	<div id="collection">
-	  		<h1>COLLECTION</h1>
-	  		<div id="collection-content">
-	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor justo nec enim imperdiet mollis. Nam volutpat lacinia accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit </p>
-	  		</div>
-	  	</div>
+  	<div id="collection">
+  		<h1>COLLECTION</h1>
+  		<div id="collection-content">
+  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor justo nec enim imperdiet mollis. Nam volutpat lacinia accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit </p>
+  		</div>
+  	</div>
 
-	  </div>
-	</div>
-</div>
-<div id="homepage-footer">
-	<%= render :partial => 'spree/shared/footer' %>
+  </div>
 </div>

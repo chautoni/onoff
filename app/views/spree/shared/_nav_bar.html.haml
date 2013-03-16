@@ -1,9 +1,12 @@
+- @header_color ||= 'black'
+- logo = @header_color == 'black' ? 'logo-white.png' : 'logo.png'
+
 %ul#main-nav-bar.inline
 	%li
-		= link_to image_tag('logo.png'), root_path, :class => 'nav-buttons'
+		= link_to image_tag(logo), root_path, :class => 'nav-buttons'
 	%li
-		= link_to image_tag('nav-collections.png'), '#', :class => 'nav-buttons'
+		= link_to t('nav.collections'), '#', :class => 'nav-buttons'
 	%li
-		= link_to image_tag('nav-online-shop.png'), products_path, :class => 'nav-buttons'
+		= link_to t('nav.online_shop'), products_path, :class => 'nav-buttons'
 	%li
-		= link_to image_tag('nav-promotion.png'), '#', :class => 'nav-buttons'
+		= link_to t('nav.promotion'), '#', :class => 'nav-buttons'

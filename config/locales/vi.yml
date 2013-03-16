@@ -53,6 +53,10 @@ vi:
   listing_products: "Danh Sách Sản Phẩm"
   mail_methods: Phương Thức Mail
   make_cover_image: "Chọn làm ảnh chính"
+  nav:
+    collections: Bộ sưu tập
+    online_shop: Cửa hàng trực tuyến
+    promotion: Khuyến mãi
   new_mail_method: Phương Thức Mail Mới
   new_shipping_method: "Phương Thức Vận Chuyển Mới"
   new_variant: "Thêm màu sắc và size"

@@ -1,12 +1,12 @@
 body#default {
 	height: 100%;
 	width: 100%;
-	min-width: 960px;
+	min-width: 1000px;
 	overflow: auto;
 }
 
 .container {
-	min-width: 960px;
+	min-width: 1000px;
 }
 
 #header {
@@ -16,19 +16,35 @@ body#default {
 	height: 110px;
 	margin: 0px;
 	z-index: 10000000;
-	min-width: 960px;
-	background: #fff;
+	width: 100%;
+	min-width: 1000px;
+	font-family: 'KnockMiddle';
+	font-size: 26px;
+}
+
+#header.black {
+	background-color: rgba(91,91,91,0.6);
+	color: #fff;
+}
+
+#header.black a {
+	color: #fff;
+}
+
+#header #header-container {
+	width: 1000px;
+	margin: auto;
 }
 
 .container #wrapper {
 	position: relative;
 	padding-top: 110px;
-	min-width: 960px;
+	min-width: 1000px;
 	height: 100%;
 }
 
 footer#footer {
-	min-width: 960px;
+	min-width: 1000px;
 	border-top: none;
 	display: block;
 	float: none;
