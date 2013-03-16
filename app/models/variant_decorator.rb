@@ -6,6 +6,10 @@ Spree::Variant.class_eval do
 
   before_save :assign_sku
 
+  def option_value_name(opt_name)
+	self.option_values.detect { |o| o.option_type.name == opt_name }.try(:name)
+  end
+
   private
   def assign_sku
   	self.sku = "#{self.product.product_sku}#{self.option_value('color')}#{self.option_value('size')}"

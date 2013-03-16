@@ -16,11 +16,11 @@ Spree::Product.class_eval do
   after_save :assign_cover_image
 
   def colors
-  	self.variants.map { |v| v.option_value('color') }.uniq.flatten
+  	self.variants.map { |v| v.option_value_name('color') }.uniq.flatten
   end
 
   def sizes
-    self.variants.map { |v| v.option_value('size') }.uniq.flatten
+    self.variants.map { |v| v.option_value_name('size') }.uniq.flatten
   end
 
   def cover_image
