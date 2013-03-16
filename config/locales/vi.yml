@@ -47,6 +47,7 @@ vi:
   back_to_shipping_methods_list: "Quay Lại Danh Sách Phương Thức Vận Chuyển"
   back_to_taxonomies_list: "Quay Lại Danh Sách Phân Loại"
   checkout: Thực hiệnt thanh toán
+  color: Màu
   currency: Tiền Tệ
   current_promotion_usage: 'Số lần đã sử dụng hiện tại %{count}'
   date_completed: Ngày Hoàn Tất
@@ -226,3 +227,13 @@ vi:
     our_story: Thông Điệp
     product_branches: Các dòng sản phẩm
     collections: Bộ sưu tập
+  products_page:
+    search_filter: Lọc sản phẩm
+    search_filter_options:
+      color: Màu sắc
+      branches: Dòng sản phẩm
+      price: Giá
+      size: Size
+      collections: Bộ sưu tập
+    product_search: Tìm sản phẩm
+    product_search_placeholder: Nhập tên hoặc mã sản phẩm để tìm
