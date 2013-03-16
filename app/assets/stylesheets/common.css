@@ -3,11 +3,19 @@ body#default {
 	width: 100%;
 	min-width: 1000px;
 	overflow: auto;
+	font-family: 'KnockMiddle';
 }
 
-.container {
-	min-width: 1000px;
+body#default p {
+	font-family: 'PT Sans';
 }
+
+#container {
+	width: 1000px;
+	margin: auto;
+}
+
+/* -----------------------------HEADER------------------------- */
 
 #header {
 	position: fixed;
@@ -18,13 +26,15 @@ body#default {
 	z-index: 10000000;
 	width: 100%;
 	min-width: 1000px;
-	font-family: 'KnockMiddle';
-	font-size: 26px;
 }
 
 #header.black {
 	background-color: rgba(91,91,91,0.6);
 	color: #fff;
+}
+
+#header nav #main-nav-bar li a {
+	font-size: 24px;
 }
 
 #header.black a {
@@ -35,6 +45,42 @@ body#default {
 	width: 1000px;
 	margin: auto;
 }
+
+nav ul#main-nav-bar {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+#header nav #main-nav-bar li a.active {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid;
+}
+
+#header nav #main-nav-bar li a.nav-buttons{
+	vertical-align: middle;
+	display: inline-block;
+	margin: 0px 35px;
+	text-align: center;
+	padding: 10px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#header nav #main-nav-bar li:first-child a.nav-buttons {
+	margin-left: 0px;
+}
+
+#header nav #main-nav-bar li:last-child a.nav-buttons {
+	margin-right: 0px;
+}
+
+/* ------------------------------------------------------ */
 
 .container #wrapper {
 	position: relative;
@@ -55,24 +101,4 @@ footer#footer {
 
 .container footer#footer {
 	border-top: none;
-}
-
-nav ul#main-nav-bar {
-	border-bottom: none;
-	margin-bottom: 0;
-}
-
-ul#main-nav-bar li a.nav-buttons{
-	vertical-align: middle;
-	display: inline-block;
-	margin: 0px 45px;
-	text-align: center;
-}
-
-ul#main-nav-bar li:first-child a.nav-buttons {
-	margin-left: 0px;
-}
-
-ul#main-nav-bar li:last-child a.nav-buttons {
-	margin-right: 0px;
 }

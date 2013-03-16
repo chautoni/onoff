@@ -1,6 +1,6 @@
 $(function() {
 	// ----------- Initiate jqzoom -----------
-	var jqzoom_options = {  
+	var jqzoom_options = {
   	title: false
   };
 	$('.jqzoom').jqzoom(jqzoom_options);
@@ -30,6 +30,19 @@ $(function() {
 		var width = screen.width;
 		$('#slideshow ul li img').css('width', width);
 	}
+
+	// ----------- Initiate Homepage Collection Carousel ------------
+	var carousel = $('ul.collection-carousel').waterwheelCarousel();
+
+	$(document).on('click', '#collection .collection-carousel-container a.collection-carousel-prev', function(e) {
+		e.preventDefault();
+		carousel.prev();
+	});
+
+	$(document).on('click', '#collection .collection-carousel-container a.collection-carousel-next', function(e) {
+		e.preventDefault();
+		carousel.next();
+	});
 });
 
 window.onload = function() {
@@ -44,3 +57,4 @@ window.onload = function() {
 		$('#slide-next').css('top', (parseInt(parseInt(height)/2)+"px"));
 	}
 };
+

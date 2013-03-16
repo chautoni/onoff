@@ -14,3 +14,4 @@
 //= require jquery.jqzoom-core-pack
 //= require jquery.jcarousel.min
 //= require jquery.carouFredSel
+//= require jquery.waterwheelCarousel.min

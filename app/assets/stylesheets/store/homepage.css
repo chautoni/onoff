@@ -1,46 +1,30 @@
-#homepage-header {
-	width: 100%;
-	height: 110px;
-	min-width: 960px;
-	background: #fff;
+h1.title {
+	color: #606d8d;
+	font-size: 52px;
+	text-transform: uppercase;
 	display: block;
-	position: fixed;
-	top: 0px;
-	z-index: 10000000;
+	line-height: 90px;
+	padding-bottom: 20px;
 }
 
-#homepage-header header#header {
-	display: block;
-	height: 110px;
-	width: 960px;
-	margin: auto;
-	position: relative;
+h1.title span {
+	border-bottom: 1px solid;
+	padding-bottom: 10px;
 }
 
-#homepage-header header#header nav ul#main-nav-bar {
-	margin-top: 0;
-}
-
-#homepage-container {
-	width: 100%;
-	position: relative;
-	top: 110px;
-}
-
-#homepage-footer {
-	position: relative;
-	width: 100%;
-	background: #f9f9f9;
+.block-content {
 	text-align: center;
-	margin-top: 110px;
+	color: #3b3b3b;
+	font-size: 20px;
+	line-height: 25px;
+	margin-top: 150px;
 }
 
-#homepage-footer footer#footer {
-	border-top: none;
-}
+/**************/
+/* SLIDESHOW */
+/**************/
 
 #slideshow {
-	height: 580px;
 	left: 0;
 	right: 0;
 	display: block;
@@ -55,7 +39,6 @@
 #slideshow ul li {
 	list-style: none;
 	width: 100%;
-	height: 580px;
 }
 
 #slide-prev, #slide-next {
@@ -84,8 +67,8 @@
 }
 
 a.slide-pagination {
-	font-size: 35px; 
-	font-weight: bold; 
+	font-size: 35px;
+	font-weight: bold;
 	margin-right: 1px;
 	color: #111;
 }
@@ -94,8 +77,13 @@ a.slide-pagination.selected {
 	color: #ccc;
 }
 
+/*************************************************************/
+/****** OUR STORY **********************************************/
+/*************************************************************/
+
 #our-story {
 	position: relative;
+	margin-top: 120px;
 	margin-bottom: 50px;
 }
 
@@ -105,43 +93,141 @@ a.slide-pagination.selected {
 
 #our-story #our-story-container {
 	display: inline-block;
-	width: 517px;
-	height: 517px;
-	background: url('../our-story-background.png');
+	width: 545px;
+	height: 545px;
+	background: url('../homepage/our-story-background.png');
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	text-align: center;
+	text-align: left;
+	z-index: -10;
 }
 
 #our-story #our-story-container #our-story-wrapper {
 	margin: 40px;
+	padding: 50px 0 30px 60px;
 }
 
 #our-story #our-story-container #our-story-wrapper h1 {
-	font-size: 20px;
-	font-weight: bold;
+	font-size: 40px;
+	color: #606d8d;
+	text-transform: uppercase;
+	font-weight: normal;
+	margin-left: 50px;
+	margin-bottom: 20px
 }
 
 #our-story #our-story-container #our-story-wrapper p {
 	margin: 0;
-	font-size: 14px;
+	font-size: 18px;
+	color: #3b3b3b;
+	padding: 0;
+	line-height: 30px;
 }
 
-#collection {
-	margin-bottom:  50px;
-	text-align: center;
+/*************************************************************/
+/****** PRODUCT BRANCHES **********************************************/
+/*************************************************************/
+
+.product-branch {
+	width: 326px;
+	float: left;
+	margin: 30px 3px 5px 3px;
+	position: relative;
+}
+
+.product-branch .imagehover {
+	width: 326px;
+	height: 217px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.product-branch .imagehover:hover {
+	background-color: rgba(0,0,0,0.6);
+	background-image: url('../eye.png');
+	display: block;
+}
+
+.product-branch h2 {
+	text-transform: uppercase;
 	font-size: 20px;
-	line-height: 25px;
+	margin-top: 10px;
 }
 
-#collection h1 {
-	font-size: 60px;
+/*************************************************************/
+/****** COLLECTION **********************************************/
+/*************************************************************/
+
+#collection .text {
+	width: 700px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+#collection .collection-carousel-container {
+	padding-top: 400px;
+	padding-bottom: 400px;
+	position: relative;
+}
+
+#collection .collection-carousel-container a.collection-carousel-prev, #collection .collection-carousel-container a.collection-carousel-next{
+	width: 38px;
+	height: 70px;
+	display: inline-block;
+	position: absolute;
+	top: 400px;
+	z-index: 100000;
+}
+
+#collection .collection-carousel-container a.collection-carousel-prev {
+	background: url('../collection-carousel-left-arr.png') 0 0;
+	left: 0;
+	float: left;
+}
+
+#collection .collection-carousel-container a.collection-carousel-prev:hover {
+	background: url('../collection-carousel-left-arr.png') 0 -70px;
+}
+
+#collection .collection-carousel-container a.collection-carousel-next {
+	background: url('../collection-carousel-right-arr.png') 0 0;
+	right: 0;
+	float: right;
+}
+
+#collection .collection-carousel-container a.collection-carousel-next:hover {
+	background: url('../collection-carousel-right-arr.png') 0 -70px;
+}
+
+ul.collection-carousel {
+	margin: auto;
+	width: 1000px;
+}
+
+#collection p.carousel-caption {
+	font-size: 35px;
+	text-transform: uppercase;
+	padding: 0;
+}
+
+#eop.block-content {
+	padding-bottom: 100px;
+}
+
+#eop a {
 	color: #696969;
-	line-height: 65px;
-}
-
-#collection #collection-content {
-	width: 50%;
+	font-size: 30px;
+	text-transform: uppercase;
+	position: relative;
+	background-position-x: center;
+	background-position-y: 0px;
+	background-image: url('../back-to-top.png');
+	background-repeat: no-repeat;
+	padding-top: 50px;
+	display: block;
+	width: 202px;
+	height: 88px;
 	margin: auto;
 }

@@ -1,3 +1,4 @@
+<%# encoding UTF-8 %>
 <% content_for :full_width_slide do %>
   <div id="slideshow">
   	<ul>
@@ -12,33 +13,72 @@
 	</div>
 <% end %>
 
-<div class="container">
-  <div id="wrapper" class="row" data-hook>
-  	<div id="our-story">
-  		<%= image_tag 'our-story-photo.jpg' %>
-  		<div id="our-story-container">
-  			<div id="our-story-wrapper">
-  				<h1 style='font-family:KnockMiddle'>Our Story</h1>
-	  			<p>Lorem ipsum dolor sit amet,</p>
-			    <p>consectetus adipiscing elit. Suspendisse </p>
-			    <p>tempor justo nec enim imperdiet mollis. </p>
-			    <p>Nam volutpat lacinia accumsan Vestibulum </p>
-			    <p>ante ipsum primisin faucibus orci luctus </p>
-			    <p>et ultrices posuere cubilia Curae; lorem </p>
-			    <p>ipsum dolor sit amet, consectetur adipis</p>
-			    <p>cing elit. Aliquam eu tortor vel nibh fringilla </p>
-			    <p>pulvinar. Proin sit amet nibh odio, </p>
-			  	<p>quis semper diam. Maecenas a </p>
-			  </div>
-  		</div>
-  	</div>
+<div id="wrapper" class="row" data-hook>
+	<div id="our-story">
+		<%= image_tag 'homepage/our-story-photo.png' %>
+		<div id="our-story-container">
+			<div id="our-story-wrapper">
+				<h1><%= t(:our_story) %></h1>
+  			<p>&nbsp;Lorem ipsum dolor sit amet,</p>
+		    <p>&nbsp;&nbsp; consectetus adipiscing elit. Suspendisse </p>
+		    <p>&nbsp;&nbsp;&nbsp; tempor justo nec enim imperdiet mollis. </p>
+		    <p>&nbsp;&nbsp;&nbsp;&nbsp; Nam volutpat lacinia accumsan Vestibulum </p>
+		    <p>&nbsp;&nbsp;&nbsp;&nbsp; ante ipsum primisin faucibus orci luctus </p>
+		    <p>&nbsp;&nbsp;&nbsp;&nbsp; et ultrices posuere cubilia Curae; lorem </p>
+		    <p>&nbsp;&nbsp;&nbsp;&nbsp;ipsum dolor sit amet, consectetur adipis</p>
+		    <p>&nbsp;&nbsp;&nbsp;cing elit. Aliquam eu tortor vel nibh fringilla </p>
+		    <p>&nbsp;&nbsp;pulvinar. Proin sit amet nibh odio, </p>
+		  	<p>quis semper diam. Maecenas a </p>
+		  </div>
+		</div>
+	</div>
 
-  	<div id="collection">
-  		<h1>COLLECTION</h1>
-  		<div id="collection-content">
-  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor justo nec enim imperdiet mollis. Nam volutpat lacinia accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit </p>
-  		</div>
-  	</div>
+	<div id="product_branches" class="block-content">
+		<h1 class='title'><span><%= t('homepage.product_branches') %></span></h1>
+		<div>
+			<div class='product-branch'>
+				<%= image_tag 'homepage/underwear-bottom.jpg' %>
+				<div class='imagehover'></div>
+				<h2>Quần Lót</h2>
+			</div>
+		</div>
+		<div>
+			<div class='product-branch'>
+				<%= image_tag 'homepage/shocks.jpg' %>
+				<div class='imagehover'></div>
+				<h2>Vớ</h2>
+			</div>
+		</div>
+		<div>
+			<div class='product-branch'>
+				<%= image_tag 'homepage/underwear-top.jpg' %>
+				<div class='imagehover'></div>
+				<h2>Áo Lót</h2>
+			</div>
+		</div>
+	</div>
 
-  </div>
+	<div class='clear'></div>
+
+	<div id="collection" class="block-content">
+		<h1 class='title'><span><%= t('homepage.collections') %></span></h1>
+		<div class='text'>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempor justo nec enim imperdiet mollis. Nam volutpat lacinia accumsan. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Lorem ipsum dolor sit </p>
+		</div>
+		<div class='collection-carousel-container'>
+			<a class='collection-carousel-prev' href=""></a>
+			<ul class='collection-carousel'>
+				<li><%= image_tag 'homepage/collection-slide-1.jpg' %></li>
+				<li><%= image_tag 'homepage/collection-slide-2.jpg' %></li>
+				<li><%= image_tag 'homepage/collection-slide-3.jpg' %></li>
+				<li><%= image_tag 'homepage/collection-slide-4.jpg' %></li>
+			</ul>
+			<a class='collection-carousel-next' href=""></a>
+		</div>
+		<p class='carousel-caption'>Thể Thao</p>
+	</div>
+
+	<div id="eop" class="block-content">
+		<a href="#slideshow" ><%= t(:back_to_top) %></a>
+	</div>
 </div>
