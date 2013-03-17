@@ -1,5 +1,6 @@
 module Spree
   CheckoutController.class_eval do
+    before_filter :ensure_one_payment_only, only: [:update]
 
     def paypal_payment
       load_order
@@ -102,6 +103,10 @@ module Spree
     end
 
     private
+
+    def ensure_one_payment_only
+      @order.payments.destroy_all if @order && @order.payments.count > 0
+    end
 
     def order_opts(order, payment_method_id, stage)
       items = order.line_items.map do |item|
