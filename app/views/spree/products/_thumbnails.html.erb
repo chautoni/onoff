@@ -1,5 +1,5 @@
 <%# no need for thumbnails unless there is more than one image %>
-<% if (@product.images + @product.variant_images).uniq.size > 1 %>
+<!--<% if (@product.images + @product.variant_images).uniq.size > 1 %>
 <div id="product-thumbnails-slide">
   <a class="buttons prev" href="#">left</a>
   <div class="viewport">
@@ -27,4 +27,32 @@
   </div>
   <a class="buttons next" href="#">right</a>
 </div>
-<% end %>
+<% end %>-->
+<div id="product-thumbnails-slide">
+  <a class="buttons prev" href="#">left</a>
+  <div class="viewport">
+    <ul id="product-thumbnails" class="thumbnails inline overview" data-hook>
+      <li class='vtmb-1 vtmb' id='tmb-1'>
+        <%= link_to(
+        image_tag('products/product-mini.jpg'), '../assets/products/product-product.jpg', :data => {:"large-url" => '../assets/products/product-large.jpg'}) %>
+      </li>
+      <li class='vtmb-2 vtmb' id='tmb-2'>
+        <%= link_to(
+        image_tag('products/thumb-1-mini.jpg'), '../assets/products/thumb-1-product.jpg', :data => {:"large-url" => '../assets/products/thumb-1-large.jpg'}) %>
+      </li>
+      <li class='vtmb-3 vtmb' id='tmb-3'>
+        <%= link_to(
+        image_tag('products/thumb-2-mini.jpg'), '../assets/products/thumb-2-product.jpg', :data => {:"large-url" => '../assets/products/thumb-2-large.jpg'}) %>
+      </li>
+      <li class='vtmb-4 vtmb' id='tmb-4'>
+        <%= link_to(
+        image_tag('products/thumb-3-mini.jpg'), '../assets/products/thumb-3-product.jpg', :data => {:"large-url" => '../assets/products/thumb-3-large.jpg'}) %>
+      </li>
+      <li class='vtmb-5 vtmb' id='tmb-5'>
+        <%= link_to(
+        image_tag('products/thumb-4-mini.jpg'), '../assets/products/thumb-4-product.jpg', :data => {:"large-url" => '../assets/products/thumb-4-large.jpg'}) %>
+      </li>
+    </ul>
+  </div>
+  <a class="buttons next" href="#">right</a>
+</div>

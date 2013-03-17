@@ -20,218 +20,231 @@
   </div>
 
   <div id='feature-products'>
-    <div class='feature-product'>
-      <%= image_tag 'products/feature-1.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
+    <ul>
+      <li class='feature-product'>
+        <%= image_tag 'products/feature-1.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p><%= t(:price) %></p>
+            <p class='price'>585.000 VNĐ</p>
+            <p class='discount'>(tiết kiệm 20%)</p>
+          </div>
         </div>
-        <div class='price'>
-          <p><%= t(:price) %></p>
-          <p class='price'>585.000 VNĐ</p>
-          <p class='discount'>(tiết kiệm 20%)</p>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+      <li class='feature-product'>
+        <%= image_tag 'products/feature-2.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p><%= t(:price) %></p>
+            <p class='price'>585.000 VNĐ</p>
+            <p class='discount'>(tiết kiệm 20%)</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class='feature-product'>
-      <%= image_tag 'products/feature-2.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
-        </div>
-        <div class='price'>
-          <p><%= t(:price) %></p>
-          <p class='price'>585.000 VNĐ</p>
-          <p class='discount'>(tiết kiệm 20%)</p>
-        </div>
-      </div>
-    </div>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+    </ul>
   </div>
 
   <div id='product-list'>
-    <div class='product'>
-      <%= image_tag 'products/product-1.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
+    <ul>
+      <li class='product'>
+        <%= image_tag 'products/product-1.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p class='discount'>985.000 VNĐ</p>
+            <p class='price'>585.000 VNĐ</p>
+          </div>
         </div>
-        <div class='price'>
-          <p class='discount'>985.000 VNĐ</p>
-          <p class='price'>585.000 VNĐ</p>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+      <li class='product'>
+        <%= image_tag 'products/product-2.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p class='discount'>985.000 VNĐ</p>
+            <p class='price'>585.000 VNĐ</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class='product'>
-      <%= image_tag 'products/product-2.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+      <li class='product'>
+        <%= image_tag 'products/product-3.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p class='discount'>985.000 VNĐ</p>
+            <p class='price'>585.000 VNĐ</p>
+          </div>
         </div>
-        <div class='price'>
-          <p class='discount'>985.000 VNĐ</p>
-          <p class='price'>585.000 VNĐ</p>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+      <li class='product'>
+        <%= image_tag 'products/product-4.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p class='discount'>985.000 VNĐ</p>
+            <p class='price'>585.000 VNĐ</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class='product'>
-      <%= image_tag 'products/product-3.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+      <li class='product'>
+        <%= image_tag 'products/product-5.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p class='discount'>985.000 VNĐ</p>
+            <p class='price'>585.000 VNĐ</p>
+          </div>
         </div>
-        <div class='price'>
-          <p class='discount'>985.000 VNĐ</p>
-          <p class='price'>585.000 VNĐ</p>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+      <li class='product'>
+        <%= image_tag 'products/product-6.jpg' %>
+        <div class='product-detail'>
+          <h2 class='product-title'>Vớ Elegance Dài</h2>
+          <h3 class='product-sku'>MSP ABCDEFD</h3>
+          <div class='colors-sizes'>
+            <p> <%= t(:color) %> </p>
+            <ul>
+              <li style="background-color: #15386d"></li>
+              <li style="background-color: #6d3a15"></li>
+              <li style="background-color: #6d1534"></li>
+            </ul>
+            <br/>
+            <p> <%= t(:size) %> </p>
+            <ul class='size'>
+              <li>S</li>
+              <li>M</li>
+              <li>L</li>
+            </ul>
+          </div>
+          <div class='price'>
+            <p class='discount'>985.000 VNĐ</p>
+            <p class='price'>585.000 VNĐ</p>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class='product'>
-      <%= image_tag 'products/product-4.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
-        </div>
-        <div class='price'>
-          <p class='discount'>985.000 VNĐ</p>
-          <p class='price'>585.000 VNĐ</p>
-        </div>
-      </div>
-    </div>
-    <div class='product'>
-      <%= image_tag 'products/product-5.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
-        </div>
-        <div class='price'>
-          <p class='discount'>985.000 VNĐ</p>
-          <p class='price'>585.000 VNĐ</p>
-        </div>
-      </div>
-    </div>
-    <div class='product'>
-      <%= image_tag 'products/product-6.jpg' %>
-      <div class='product-detail'>
-        <h2 class='product-title'>Vớ Elegance Dài</h2>
-        <h3 class='product-sku'>MSP ABCDEFD</h3>
-        <div class='colors-sizes'>
-          <p> <%= t(:color) %> </p>
-          <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
-          </ul>
-          <br/>
-          <p> <%= t(:size) %> </p>
-          <ul class='size'>
-            <li>S</li>
-            <li>M</li>
-            <li>L</li>
-          </ul>
-        </div>
-        <div class='price'>
-          <p class='discount'>985.000 VNĐ</p>
-          <p class='price'>585.000 VNĐ</p>
-        </div>
-      </div>
-    </div>
+        <%= link_to '', product_path(Spree::Product.first) %>
+      </li>
+    </ul>
+
   </div>
 </div>

@@ -1,9 +1,13 @@
-<div data-hook="product_show" itemscope itemtype="http://schema.org/Product">
-  <% @body_id = 'product-details' %>
+<% content_for :full_width_slide do %>
+  <div class='top-banner' >
+    <%= image_tag 'products/top-banner.jpg' %>
+  </div>
+<% end %>
 
-  <div class="columns six alpha" data-hook="product_left_part">
-    <div class="row" data-hook="product_left_part_wrap">
-
+<div id="wrapper" class="row" data-hook>
+  <div id='breadcrumb'><%= breadcrumb @product.name %></div>
+  <div id='product-container'>
+    <div class='product-info' data-hook="product_show">
       <div id="product-images" data-hook="product_images">
         <div id="main-image" data-hook>
           <%= render :partial => 'image' %>
@@ -14,33 +18,82 @@
         </div>
       </div>
 
-      <div data-hook="product_properties">
-        <%= render :partial => 'properties' %>
-      </div>
-    
-    </div>
-  </div>
-
-  <div class="columns ten omega" data-hook="product_right_part">
-    <div class="row" data-hook="product_right_part_wrap">
-
       <div id="product-description" data-hook="product_description">
-
-        <h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
-
+        <!--<h1 class="product-title" itemprop="name"><%= accurate_title %></h1>
         <div itemprop="description" data-hook="description">
           <%= product_description(@product) rescue t(:product_has_no_description) %>
+        </div>-->
+        <h1 class="product-title" itemprop="name">Vớ Elegance Dài</h1>
+        <h2 class="product-sku" itemprop="sku">MSP ADKEWAB</h2>
+        <div itemprop="description" data-hook="description">
+          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
         </div>
-
-        <div id="cart-form" data-hook="cart_form">
-          <%= render :partial => 'cart_form' %>
+        <div class='available-colors'>
+          <ul>
+            <li style="background-color: #15386d"></li>
+            <li style="background-color: #6d3a15"></li>
+            <li style="background-color: #6d1534"></li>
+          </ul>
         </div>
-
+        <div class='available-sizes'>
+          <ul class='no-list-type'>
+            <% ['S', 'M', 'L', 'X', 'XL', 'XXL', 'X', 'XL', 'XXL'].each do |size| %>
+              <li><%= size %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class='size-chart'><%= link_to t(:size_chart), '#', :target => 'blank' %></div>
       </div>
 
-      <%= render :partial => 'taxons' %>
-
+      <div id="cart-form" data-hook="cart_form">
+        <%= render :partial => 'cart_form' %>
+      </div>
     </div>
   </div>
+</div>
 
+<hr/>
+
+<div id='same-collection' class='suggest-products-list'>
+  <h1><%= t('product_page.collection') %></h1>
+  <ul>
+    <% ['products/suggest-product-1.jpg', 'products/suggest-product-2.jpg', 'products/suggest-product-3.jpg', 'products/suggest-product-4.jpg'].each do |img| %>
+      <li>
+        <%= image_tag img %>
+        <div class='imagehover'></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<hr/>
+
+<div id='suggest-products' class='suggest-products-list'>
+  <h1><%= t('product_page.suggest_products') %></h1>
+  <ul>
+    <% ['products/suggest-product-1.jpg', 'products/suggest-product-2.jpg', 'products/suggest-product-3.jpg', 'products/suggest-product-4.jpg'].each do |img| %>
+      <li>
+        <%= image_tag img %>
+        <div class='imagehover'></div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<hr/>
+
+<div id='product-comments'>
+  <div class='title'><%= t(:add_comment) %></div>
+  <div class='container'>
+    <%= form_tag '' do %>
+      <%= label_tag :name, t('comment_form.full_name'), :class => 'required' %>
+      <%= text_field_tag :name, '', :class => 'name-field' %>
+      <%= label_tag :email, t('comment_form.email'), :class => 'required' %>
+      <%= text_field_tag :email, '', :class => 'email-field' %>
+      <div class='padding'></div>
+      <%= label_tag :content, t('comment_form.content'), :class => 'required' %>
+      <%= text_area_tag :content %>
+      <%= submit_tag t('comment_form.submit') %>
+    <% end %>
+  </div>
 </div>

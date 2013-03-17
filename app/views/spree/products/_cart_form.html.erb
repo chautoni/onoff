@@ -1,0 +1,36 @@
+<div id='add-to-cart'>
+  <div id='price-tag'>
+    <p><%= t(:price) %></p>
+    <p class='price'>585.000 VNĐ</p>
+    <p class='discount'>(tiết kiệm 20%)</p>
+  </div>
+  <div id='quantity'>
+    <%= label_tag t(:quantity) %>
+    <%= number_field_tag :quantity, 1, :min => 1 %>
+  </div>
+  <div id='click-to-buy'>
+    <%= submit_tag t(:choose_to_buy) %>
+  </div>
+  <div id='support-info'>
+    <p class='bold'>Quý khách có thể gọi số</p>
+    <p class='bold big orange'>(08) 827932</p>
+    <p class='bold'>để đặt hàng</p>
+    <br/>
+    <p>Thứ 2 - Chủ nhật</p>
+    <p class='orange'>(8:00 - 20:00)</p>
+    <br/>
+    <p>Các ngày lễ</p>
+    <p class='orange'>(9:00 - 18:00)</p>
+    <br/>
+    <p class='deliver'>Giao hàng toàn quốc</p>
+    <p class='payment'>Thanh toán khi nhận</p>
+  </div>
+</div>
+<div id='social-media'>
+  <ul>
+    <li><%= link_to '', 'http://facebook.com', :class => 'social-media-icon facebook', :target => 'blank' %></li>
+    <li><%= link_to '', 'http://twitter.com', :class => 'social-media-icon twitter', :target => 'blank' %></li>
+    <li><%= link_to '', 'http://google.com', :class => 'social-media-icon ggplus', :target => 'blank' %></li>
+    <li><%= link_to '', 'mailto:abc@email.com', :class => 'social-media-icon mail' %></li>
+  </ul>
+</div>

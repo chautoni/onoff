@@ -32,6 +32,7 @@ vi:
         shipment_state: "Trạng Thái Vận Chuyển"
         email: "Email Khách Hàng"
 
+  add_comment: "Gửi bình luận"
   add_to_cart: "Thêm Vào Giỏ Hàng"
   add_option_value: "Thêm lựa chọn"
   add_promotion_action_of_type: Thêm cách tính thuộc loại
@@ -48,6 +49,7 @@ vi:
   back_to_taxonomies_list: "Quay Lại Danh Sách Phân Loại"
   checkout: Thực hiệnt thanh toán
   color: Màu
+  choose_to_buy: Chọn mua
   currency: Tiền Tệ
   current_promotion_usage: 'Số lần đã sử dụng hiện tại %{count}'
   date_completed: Ngày Hoàn Tất
@@ -177,6 +179,7 @@ vi:
       description: Chỉ áp dụng cho những người dùng có tài khoản
   promotion_rules: Điều kiện áp dụng khuyến mãi
   promotions: Khuyến Mãi
+  quantity: Số lượng
   quantity_returned: Số lượng đã hoàn lại
   return_quantity: Số lượng đã hoàn lại
   save: Lưu
@@ -190,6 +193,7 @@ vi:
   shopping_cart: Giỏ hàng
   show_deleted: "Hiển thị các kết quả đã bị xoá"
   show_only_complete_orders: "Chỉ hiện thị đơn hàng đã checkout"
+  size_chart: Bản quy đổi size
   slide_order: "Thứ Tự Slide"
   spree:
     date: Ngày
@@ -219,14 +223,25 @@ vi:
   new_color: "Màu mới"
 
   back_to_top: Về đầu trang
-  nav:
-    collections: Bộ sưu tập
+  breadcrumb:
+    homepage: Trang chủ
     online_shop: Cửa hàng trực tuyến
-    promotion: Khuyến mãi
+  comment_form:
+    full_name: Họ và tên
+    email: Email
+    content: Nội dung
+    submit: Gửi
   homepage:
     our_story: Thông Điệp
     product_branches: Các dòng sản phẩm
     collections: Bộ sưu tập
+  nav:
+    collections: Bộ sưu tập
+    online_shop: Cửa hàng trực tuyến
+    promotion: Khuyến mãi
+  product_page:
+    collection: Bộ sưu tập
+    suggest_products: Phối hợp đẹp
   products_page:
     search_filter: Lọc sản phẩm
     search_filter_options:
