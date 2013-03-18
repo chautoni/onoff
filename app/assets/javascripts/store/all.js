@@ -15,3 +15,4 @@
 //= require jquery.jcarousel.min
 //= require jquery.carouFredSel
 //= require jquery.waterwheelCarousel.min
+//= require jquery.adipoli.min

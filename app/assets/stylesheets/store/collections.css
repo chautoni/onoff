@@ -1,0 +1,16 @@
+#collections-nav {
+	width: 1170px;
+	margin: auto;
+	padding-top: 120px;
+}
+
+#collections-nav ul {
+	list-style: none;
+}
+
+#collections-nav ul li {
+	display: inline-block;
+	width: 290px;
+	height: 430px;
+	position: relative;
+}

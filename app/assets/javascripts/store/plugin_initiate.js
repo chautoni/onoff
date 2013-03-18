@@ -43,6 +43,12 @@ $(function() {
 		e.preventDefault();
 		carousel.next();
 	});
+
+	// ----------- Initiate Homepage Collection Carousel ------------
+	$('.img-nav').adipoli({
+		'startEffect' : 'grayscale',
+    'hoverEffect' : 'popout'
+	});
 });
 
 window.onload = function() {

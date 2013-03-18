@@ -303,7 +303,7 @@
 
 #product-comments form {
 	font-size: 16px;
-	font-family: 'PT Sans';
+	font-family: 'Open Sans';
 	padding-bottom: 100px;
 }
 
@@ -326,7 +326,7 @@
 }
 
 #product-comments input.email-field {
-	width: 365px;
+	width: 356px;
 }
 
 #product-comments .padding {
@@ -340,6 +340,8 @@
 	height: 200px;
 	width: 677px;
 	margin-left: 2px;
+	resize: none;
+	overflow-x: hidden;
 }
 
 #product-comments input[type=submit] {

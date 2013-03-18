@@ -5,8 +5,8 @@
 	%li
 		= link_to image_tag(logo), root_path, :class => 'nav-buttons'
 	%li
-		= link_to t('nav.collections'), '#', :class => "nav-buttons"
+		= link_to t('nav.collections'), default_collections_path, :class => "nav-buttons #{ 'active' if controller.controller_name == 'collections' && controller.action_name == 'index' }"
 	%li
-		= link_to t('nav.online_shop'), products_path, :class => "nav-buttons #{ 'active' if controller.controller_name == 'products' && controller.action_name == 'index' }"
+		= link_to t('nav.online_shop'), products_path, :class => "nav-buttons #{ 'active' if controller.controller_name == 'products' }"
 	%li
 		= link_to t('nav.promotion'), '#', :class => 'nav-buttons'

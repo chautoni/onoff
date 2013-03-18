@@ -1,6 +1,7 @@
 Onoff::Application.routes.draw do
 
   # This line mounts Spree's routes at the root of your application.
+  # This means, any requests to URLs such l go to Spree::ProductsController.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
   #
@@ -14,6 +15,9 @@ Onoff::Application.routes.draw do
   end
 
   Spree::Core::Engine.routes.prepend do
+    get '/collections', :to => 'collections#index', :as => :default_collections
+    get '/collections/:collection_name', :to => 'collections#index', :as => :onoff_collections
+
     get '/admin/products/import_products', :to => 'admin/products#new_products', :as => :new_products
     post '/admin/products/import_products', :to => 'admin/products#import_products', :as => :import_products
     get '/admin/products/:product_id/edit_images', :to => 'admin/products#edit_images', :as => :edit_images_admin_product
