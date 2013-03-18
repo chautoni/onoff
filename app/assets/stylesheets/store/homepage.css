@@ -167,8 +167,8 @@ a.slide-pagination.selected {
 }
 
 #collection .collection-carousel-container {
-	padding-top: 400px;
-	padding-bottom: 400px;
+	padding-top: 200px;
+	padding-bottom: 200px;
 	position: relative;
 }
 
@@ -177,7 +177,7 @@ a.slide-pagination.selected {
 	height: 70px;
 	display: inline-block;
 	position: absolute;
-	top: 400px;
+	top: 200px;
 	z-index: 100000;
 }
 
@@ -206,7 +206,7 @@ ul.collection-carousel {
 	width: 1000px;
 }
 
-#collection p.carousel-caption {
+#collection p#carousel-caption {
 	font-size: 35px;
 	text-transform: uppercase;
 	padding: 0;

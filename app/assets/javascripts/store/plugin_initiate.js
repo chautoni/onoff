@@ -32,7 +32,11 @@ $(function() {
 	}
 
 	// ----------- Initiate Homepage Collection Carousel ------------
-	var carousel = $('ul.collection-carousel').waterwheelCarousel();
+	var carousel = $('ul.collection-carousel').waterwheelCarousel({
+		movedToCenter: function($newCenterItem) {
+			$('p#carousel-caption').text($newCenterItem.data('caption'));
+		}
+	});
 
 	$(document).on('click', '#collection .collection-carousel-container a.collection-carousel-prev', function(e) {
 		e.preventDefault();
@@ -44,7 +48,7 @@ $(function() {
 		carousel.next();
 	});
 
-	// ----------- Initiate Homepage Collection Carousel ------------
+	// ----------- Collection Navs ------------
 	$('.img-nav').adipoli({
 		'startEffect' : 'grayscale',
     'hoverEffect' : 'popout'
