@@ -167,8 +167,8 @@ a.slide-pagination.selected {
 }
 
 #collection .collection-carousel-container {
-	padding-top: 200px;
-	padding-bottom: 200px;
+	/*padding-top: 200px;
+	padding-bottom: 200px;*/
 	position: relative;
 }
 
@@ -204,6 +204,9 @@ a.slide-pagination.selected {
 ul.collection-carousel {
 	margin: auto;
 	width: 1000px;
+	display: relative;
+	height: 500px;
+	list-style: none;
 }
 
 #collection p#carousel-caption {
@@ -221,8 +224,7 @@ ul.collection-carousel {
 	font-size: 30px;
 	text-transform: uppercase;
 	position: relative;
-	background-position-x: center;
-	background-position-y: 0px;
+	background-position: center 0;
 	background-image: url('../back-to-top.png');
 	background-repeat: no-repeat;
 	padding-top: 50px;
