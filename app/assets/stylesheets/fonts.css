@@ -2,13 +2,11 @@
 
 @font-face {
 	font-family: 'KnockMiddle';
-  src: url('fonts/knockouthtfvnu-juniormiddlewt.otf') format('opentype');
   src: local('☺'),
        url('fonts/knockouthtfvnu-juniormiddlewt.woff') format('woff'), url('fonts/knockouthtfvnu-juniormiddlewt.ttf') format('truetype'), url('fonts/knockouthtfvnu-juniormiddlewt.svg') format('svg');
 }
-@font-face {
+/*@font-face {
 	font-family: 'KnockSumo';
-	src: url('fonts/knockouthtfvnu-juniorsumo.otf') format('opentype');
   src: local('☺'),
        url('fonts/knockouthtfvnu-juniorsumo.woff') format('woff'), url('fonts/knockouthtfvnu-juniorsumo.ttf') format('truetype'), url('fonts/knockouthtfvnu-juniorsumo.svg') format('svg');
-}
+}*/
