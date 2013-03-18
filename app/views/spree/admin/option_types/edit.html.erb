@@ -31,7 +31,7 @@
         <tr>
           <th colspan="2"><%= t(:name) %></th>
           <th><%= t(:sku) %></th>
-          <th class="actions"></th>
+          <th style='width: 100px'><%= t(:color) if @option_type.name == 'color' %></th>
         </tr>
       </thead>
       <tbody id="option_values">
@@ -56,6 +56,9 @@
                 </td>
                 <td class="name"><%= option_value.name %></td>
                 <td class="presentation"><%= option_value.presentation %></td>
+                <% if @option_type.name == 'color' %>
+                  <td class="color-code"><span style='background: #<%= option_value.color_hex_code %>'></span></td>
+                <% end %>
               </tr>
             <% end %>
           <% end %>

@@ -13,4 +13,5 @@
 //=require jquery-fileupload/basic
 //=require jquery-fileupload/vendor/tmpl
 //=require chosen.jquery
+//=require jquery.colorpicker
 //= require_tree .

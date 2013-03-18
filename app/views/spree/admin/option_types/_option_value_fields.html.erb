@@ -5,4 +5,7 @@
   </td>
   <td class="name"><%= f.text_field :name %></td>
   <td class="presentation"><%= f.text_field :presentation %></td>
+  <% if @option_type.name == 'color' %>
+  	<td><%= f.text_field :color_hex_code, :class => "color-picker" %></td>
+  <% end %>
 </tr>

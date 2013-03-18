@@ -2,3 +2,9 @@ ul#option_type_list li.option_type {
 	font-size: 20px;
 	margin-top: 10px;
 }
+
+td.color-code span {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}

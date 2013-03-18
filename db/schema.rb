@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130314164218) do
+ActiveRecord::Schema.define(:version => 20130318165245) do
 
   create_table "slides", :force => true do |t|
     t.integer  "slide_order"
@@ -209,6 +209,7 @@ ActiveRecord::Schema.define(:version => 20130314164218) do
     t.integer  "option_type_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "color_hex_code"
   end
 
   create_table "spree_option_values_variants", :id => false, :force => true do |t|
