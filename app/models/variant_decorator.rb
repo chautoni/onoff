@@ -6,6 +6,7 @@ Spree::Variant.class_eval do
   after_save :check_duplicate_variants
 
   before_save :assign_sku
+  after_create :auto_assign_master_price
 
   def option_value_name(opt_name)
 	self.option_values.detect { |o| o.option_type.name == opt_name }.try(:name)
@@ -36,5 +37,9 @@ Spree::Variant.class_eval do
       end
     end
     duplicated_variants.uniq.map(&:destroy)
+  end
+
+  def auto_assign_master_price
+    self.update_attributes(:price => self.product.master.price)
   end
 end

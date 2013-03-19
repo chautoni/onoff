@@ -17,10 +17,10 @@
       </div>
     <% end %>
 
-    <div class="field" data-hook="price">
+    <!-- <div class="field" data-hook="price">
       <%= f.label :price, t(:price) %>
       <%= f.text_field :price, :value => number_to_currency(@variant.price, :unit => ''), :class => 'fullwidth' %>
-    </div>
+    </div> -->
 
     <% if Spree::Config[:track_inventory_levels] %>
       <!-- <div class="field checkbox" data-hook="on_hand">
