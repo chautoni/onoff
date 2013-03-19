@@ -194,6 +194,7 @@ vi:
   shopping_cart: Giỏ hàng
   show_deleted: "Hiển thị các kết quả đã bị xoá"
   show_only_complete_orders: "Chỉ hiện thị đơn hàng đã checkout"
+  size: Size
   size_chart: Bản quy đổi size
   slide_order: "Thứ Tự Slide"
   spree:

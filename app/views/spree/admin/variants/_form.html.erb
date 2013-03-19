@@ -6,11 +6,11 @@
         <%= label :new_variant, option.option_type.presentation %>
         <% if @variant.new_record? %>
           <%= select(:new_variant, option.option_type.presentation,
-            option.option_type.option_values.collect {|ov| [ ov.presentation, ov.id ] },
+            option.option_type.option_values.collect {|ov| [ ov.name, ov.id ] },
             {}, {:class => 'select2 fullwidth'})
           %>
         <% else %>
-          <% if opt = @variant.option_values.detect {|o| o.option_type == option.option_type }.try(:presentation) %>
+          <% if opt = @variant.option_values.detect {|o| o.option_type == option.option_type }.try(:name) %>
             <%= text_field(:new_variant,  option.option_type.presentation, :value => opt, :disabled => 'disabled', :class => 'fullwidth') %>
           <% end %>
         <% end %>
