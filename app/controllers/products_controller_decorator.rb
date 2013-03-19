@@ -2,6 +2,7 @@ Spree::ProductsController.class_eval do
 
   def index
   	@header_color = 'white'
+    @has_top_banner = true
 
     @searcher = Spree::Config.searcher_class.new(params)
     @searcher.current_user = try_spree_current_user
@@ -31,6 +32,7 @@ Spree::ProductsController.class_eval do
       # end
 
       @header_color = 'white'
+      @has_top_banner = true
       respond_with(@product)
     end
 end

@@ -16,7 +16,7 @@
     <%= render :partial => 'spree/shared/header' %>
     <%= yield :full_width_slide %>
 
-    <div id="container">
+    <div id="container" style="<%= 'margin-top: 110px;' unless @has_top_banner %>">
       <%= flash_messages %>
       <%= yield %>
     </div>

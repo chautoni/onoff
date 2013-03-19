@@ -5,12 +5,18 @@ Spree::OptionValue.class_eval do
   attr_accessible :color_hex_code
 
   before_save :check_color_code
+  before_validation :auto_assign_color_hex_code
+  after_initialize :auto_assign_color_hex_code
 
   def sku
     self.presentation
   end
 
   private
+
+  def auto_assign_color_hex_code
+    self.color_hex_code = "ffffff" unless self.color_hex_code
+  end
 
   def check_color_code
     if self.option_type_id == Spree::OptionType.find_by_name('color').id
