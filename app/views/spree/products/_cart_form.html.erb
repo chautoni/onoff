@@ -4,13 +4,16 @@
     <p class='price'>585.000 VNĐ</p>
     <p class='discount'>(tiết kiệm 20%)</p>
   </div>
-  <div id='quantity'>
-    <%= label_tag t(:quantity) %>
-    <%= number_field_tag :quantity, 1, :min => 1 %>
-  </div>
-  <div id='click-to-buy'>
-    <%= submit_tag t(:choose_to_buy) %>
-  </div>
+  <%= form_for :order, :url => populate_orders_path do |f| %>
+    <%= hidden_field_tag "products[#{@product.id}]", @product.master.id %>
+    <div id='quantity'>
+      <%= label_tag t(:quantity) %>
+      <%= number_field_tag :quantity, 1, :min => 1 %>
+    </div>
+    <div id='click-to-buy'>
+      <%= submit_tag t(:choose_to_buy) %>
+    </div>
+  <% end %>
   <div id='support-info'>
     <p class='bold'>Quý khách có thể gọi số</p>
     <p class='bold big orange'>(08) 827932</p>

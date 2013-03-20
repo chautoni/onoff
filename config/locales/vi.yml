@@ -57,7 +57,7 @@ vi:
   editing_option_type: "Sửa Đổi Các Lựa Chọn Cho"
   editing_payment_method: Sửa Đổi Phương Thức Thanh Toán
   editing_promotion: Sửa Đổi Khuyến Mãi
-  empty_cart: Làm rỗng giỏ hàngevents
+  empty_cart: Làm rỗng giỏ hàng
   events:
     spree:
       cart:
