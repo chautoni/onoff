@@ -1,13 +1,43 @@
-= @products.to_a
+/ = @products.to_a
 = form_tag '', :method => :get do
   #search-filter
     %ul
       %li= t('products_page.search_filter')
-      %li.filter= select_tag 'color', options_for_select(@filter_option_values), :prompt => "Select color"
-      %li.filter= select_tag 'brand', options_for_select(@filter_taxon_values), :prompt => "Select taxon"
-      %li.filter= select_tag 'price', options_for_select(Spree::Product::PRICE_RANGES), prompt: 'Select price'
-      %li.filter= t('products_page.search_filter_options.size')
-      %li.filter= t('products_page.search_filter_options.collections')
+      %li.filter
+        = t('products_page.search_filter_options.color')
+        %ul.filter-options
+          - @filter_color_option_values.each do |option_value|
+            %li
+              = check_box_tag 'colors[]', option_value[1]
+              = option_value[0]
+      %li.filter
+        = t('products_page.search_filter_options.branches')
+        %ul.filter-options
+          - @filter_branches_taxon_values.each do |taxon_value|
+            %li
+              = check_box_tag 'branches[]', taxon_value[1]
+              = taxon_value[0]
+      %li.filter
+        = t('products_page.search_filter_options.price')
+        %ul.filter-options
+          - Spree::Product::PRICE_RANGES.each do |range|
+            %li
+              = check_box_tag 'prices[]', range[1]
+              = range[0]
+      %li.filter
+        = t('products_page.search_filter_options.size')
+        %ul.filter-options
+          - @filter_size_option_values.each do |option_value|
+            %li
+              = check_box_tag 'sizes[]', option_value[1]
+              = option_value[0]
+      %li.filter
+        = t('products_page.search_filter_options.collections')
+        %ul.filter-options
+          - @filter_collections_taxon_values.each do |taxon_value|
+            %li
+              = check_box_tag 'collections[]', taxon_value[1]
+              = taxon_value[0]
     #search-box
       = search_field_tag :keywords, params[:keywords], :placeholder => t('products_page.product_search_placeholder')
       = submit_tag t('products_page.product_search'), :name => nil

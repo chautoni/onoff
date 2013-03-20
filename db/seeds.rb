@@ -27,11 +27,15 @@ Spree::Zone.find_or_create_by_name('Asia')
 asia_zone = Spree::Zone.find_by_name('Asia')
 asia_zone.zone_members.create(:zoneable_id => 219, :zoneable_type => 'Spree::Country') if asia_zone.zone_members.empty?
 
-Spree::Role.find_or_create_by_name('super_admin')i
+Spree::Role.find_or_create_by_name('super_admin')
 
-Spree::Taxonomy.find_or_create_by_name('Dòng sản phẩm')
-collection = Spree::Taxonomy.find_or_create_by_name('Bộ sưu tập')
+collection = Spree::Taxonomy.find_or_create_by_name('collections')
 collection.taxons.find_or_create_by_name('Thể thao')
 collection.taxons.find_or_create_by_name('Năng động')
 collection.taxons.find_or_create_by_name('Công sở')
-collection.taxons.find_or_create_by_name(:name => 'Golf')
+collection.taxons.find_or_create_by_name('Golf')
+
+branches = Spree::Taxonomy.find_or_create_by_name('branches')
+branches.taxons.find_or_create_by_name('Vớ')
+branches.taxons.find_or_create_by_name('Quần lót')
+branches.taxons.find_or_create_by_name('Áo lót')

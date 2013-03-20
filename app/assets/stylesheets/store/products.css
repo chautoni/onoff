@@ -10,6 +10,12 @@
 
 #search-filter {
 	margin: 30px 0;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 #search-filter ul {
@@ -27,6 +33,7 @@
 
 #search-filter li.filter {
 	color: #9a9a9a;
+	position: relative;
 }
 
 #search-filter li.filter:after {
@@ -35,6 +42,25 @@
 	margin-left: 5px;
 	font-size: 24px;
 	font-family: 'KnockMiddle';
+}
+
+#search-filter ul.filter-options {
+	position: absolute;
+	top: 20px;
+	left: -5px;
+	text-transform: uppercase;
+	color: #9a9a9a;
+	width: 150px;
+	border: 1px solid #ccc;
+	padding: 5px;
+	z-index: 100;
+	background: #ffffff;
+	display: none;
+	display: none;
+}
+
+#search-filter ul.filter-options li {
+	display: block;
 }
 
 #search-filter li.filter.expand:after {
