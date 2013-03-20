@@ -1,0 +1,14 @@
+= @products.to_a
+= form_tag '', :method => :get do
+  #search-filter
+    %ul
+      %li= t('products_page.search_filter')
+      %li.filter= select_tag 'color', options_for_select(@filter_option_values), :prompt => "Select color"
+      %li.filter= select_tag 'brand', options_for_select(@filter_taxon_values), :prompt => "Select taxon"
+      %li.filter= select_tag 'price', options_for_select(Spree::Product::PRICE_RANGES), prompt: 'Select price'
+      %li.filter= t('products_page.search_filter_options.size')
+      %li.filter= t('products_page.search_filter_options.collections')
+    #search-box
+      = search_field_tag :keywords, params[:keywords], :placeholder => t('products_page.product_search_placeholder')
+      = submit_tag t('products_page.product_search'), :name => nil
+

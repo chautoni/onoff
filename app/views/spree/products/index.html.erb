@@ -5,19 +5,7 @@
 <% end %>
 
 <div id="wrapper" class="row" data-hook>
-  <div id='search-filter'>
-    <ul>
-      <li><%= t('products_page.search_filter') %></li>
-      <li class='filter'><%= t('products_page.search_filter_options.color') %></li>
-      <li class='filter'><%= t('products_page.search_filter_options.branches') %></li>
-      <li class='filter'><%= t('products_page.search_filter_options.price') %></li>
-      <li class='filter'><%= t('products_page.search_filter_options.size') %></li>
-      <li class='filter'><%= t('products_page.search_filter_options.collections') %></li>
-    </ul>
-    <div id='search-box'>
-      <%= render :partial => 'spree/shared/search' %>
-    </div>
-  </div>
+  <%= render 'spree/shared/search' %>
 
   <div id='feature-products'>
     <ul>

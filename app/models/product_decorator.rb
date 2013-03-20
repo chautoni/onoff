@@ -12,6 +12,16 @@ Spree::Product.class_eval do
   after_create :make_available, :add_product_property_unit
 
 	DEFAULT_OPTION_TYPES = [COLOR = 'color', SIZE = 'size']
+  PRICE_RANGES = [
+    ['< 100,000', '1'],
+    ['100,000 - 200,000', '2'],
+    ['> 200,000', '3']
+  ]
+  PRICE_RANGE_SQLS = {
+    '1' => '< 100000',
+    '2' => 'between 100000 and 200000',
+    '3' => '> 200000'
+  }
 	after_create :assign_color_and_size
   after_save :assign_cover_image
 
