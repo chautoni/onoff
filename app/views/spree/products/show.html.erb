@@ -81,19 +81,4 @@
 </div>
 
 <hr/>
-
-<div id='product-comments'>
-  <div class='title'><%= t(:add_comment) %></div>
-  <div class='container'>
-    <%= form_tag '' do %>
-      <%= label_tag :name, t('comment_form.full_name'), :class => 'required' %>
-      <%= text_field_tag :name, '', :class => 'name-field' %>
-      <%= label_tag :email, t('comment_form.email'), :class => 'required' %>
-      <%= text_field_tag :email, '', :class => 'email-field' %>
-      <div class='padding'></div>
-      <%= label_tag :content, t('comment_form.content'), :class => 'required' %>
-      <%= text_area_tag :content %>
-      <%= submit_tag t('comment_form.submit') %>
-    <% end %>
-  </div>
-</div>
+<%= render 'spree/shared/disqus' %>
