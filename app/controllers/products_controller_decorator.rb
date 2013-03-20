@@ -39,16 +39,22 @@ Spree::ProductsController.class_eval do
 
   private
   def load_search_filter
-    @filter_color_option_values = Spree::OptionValue.where(:option_type_id => Spree::OptionType.find_by_name('color').id).select('id, name, color_hex_code, option_type_id').map do |option_value|
+    @filter_color_option_values = Spree::OptionType.find_by_name('color').option_values.select('id, name, option_type_id').map do |option_value|
       [option_value.name, option_value.id]
     end
-    @filter_size_option_values = Spree::OptionValue.where(:option_type_id => Spree::OptionType.find_by_name('size').id).select('id, name, color_hex_code, option_type_id').map do |option_value|
+    @filter_size_option_values = Spree::OptionType.find_by_name('size').option_values.select('id, name, option_type_id').map do |option_value|
       [option_value.name, option_value.id]
     end
-    @filter_collections_taxon_values = Spree::Taxonomy.find_by_name('collections').taxons.reject{ |taxon| taxon.name == taxon.taxonomy.name }.map do |taxon|
+    @filter_collections_taxon_values = Spree::Taxon
+    .joins(:taxonomy)
+    .where('spree_taxonomies.name = ? and spree_taxons.name <> ?', 'collections', 'collections')
+    .select('spree_taxons.id, spree_taxons.name').map do |taxon|
       [taxon.name, taxon.id]
     end
-    @filter_branches_taxon_values = Spree::Taxonomy.find_by_name('branches').taxons.reject{ |taxon| taxon.name == taxon.taxonomy.name }.map do |taxon|
+    @filter_branches_taxon_values = Spree::Taxon
+    .joins(:taxonomy)
+    .where('spree_taxonomies.name = ? and spree_taxons.name <> ?', 'branches', 'branches')
+    .select('spree_taxons.id, spree_taxons.name').map do |taxon|
       [taxon.name, taxon.id]
     end
   end

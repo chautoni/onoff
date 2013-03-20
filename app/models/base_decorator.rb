@@ -19,8 +19,8 @@ Spree::Core::Search::Base.class_eval do
     @properties[:per_page] = per_page > 0 ? per_page : Spree::Config[:products_per_page]
     @properties[:page] = (params[:page].to_i <= 0) ? 1 : params[:page].to_i
     @properties[:tag] = params[:tag]
-    @properties[:color] = params[:color]
-    @properties[:brand] = params[:brand]
+    @properties[:colors] = params[:colors]
+    @properties[:branches] = params[:branches]
     if params[:price].present? && Spree::Product::PRICE_RANGE_SQLS.keys.include?(params[:price])
       @properties[:price] = Spree::Product::PRICE_RANGE_SQLS[params[:price]]
     end
@@ -28,8 +28,8 @@ Spree::Core::Search::Base.class_eval do
 
   def filter_products
     @products = @products.tagged_with(@properties[:tag]) if @properties[:tag].present?
-    @products = @products.joins(:variants => :option_values).where('spree_option_values.id = ?', @properties[:color]) if @properties[:color].present?
-    @products = @products.joins(taxons: :taxonomy).where('spree_taxonomies.id = ?', @properties[:brand]) if @properties[:brand].present?
+    @products = @products.joins(:variants => :option_values).where(:'spree_option_values.id' => @properties[:colors]) if @properties[:colors].present?
+    @products = @products.joins(taxons: :taxonomy).where('spree_taxonomies.id = ?', @properties[:branches]) if @properties[:branches].present?
     @products = @products.joins(:master => :prices).where("spree_prices.currency = ? and spree_prices.amount #{@properties[:price]}", Spree::Config.currency) if @properties[:price].present?
   end
 end
