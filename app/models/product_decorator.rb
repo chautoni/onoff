@@ -4,7 +4,7 @@ Spree::Product.class_eval do
   acts_as_taggable
 	has_many :images, :as => :viewable, :class_name => Spree::Image, :through => :master, :dependent => :destroy
 	accepts_nested_attributes_for :images, :allow_destroy => true
-	attr_accessible :images, :images_attributes, :tag_list, :count_on_hand, :cover_image_id, :product_sku
+	attr_accessible :images, :images_attributes, :tag_list, :count_on_hand, :cover_image_id, :product_sku, :featured
   validates :product_sku, :presence => true
   validates :product_sku, :uniqueness => true
   validates :product_sku, :length => { :is => 5 }

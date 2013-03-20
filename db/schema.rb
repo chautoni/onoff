@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130318165245) do
+ActiveRecord::Schema.define(:version => 20130320141958) do
 
   create_table "slides", :force => true do |t|
     t.integer  "slide_order"
@@ -329,6 +329,7 @@ ActiveRecord::Schema.define(:version => 20130318165245) do
     t.boolean  "on_demand",            :default => false
     t.integer  "cover_image_id"
     t.string   "product_sku"
+    t.boolean  "featured",             :default => false
   end
 
   add_index "spree_products", ["available_on"], :name => "index_spree_products_on_available_on"

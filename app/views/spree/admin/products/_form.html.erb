@@ -28,6 +28,11 @@
       <%= f.text_field :product_sku, :class => 'fullwidth' %>
     </div>
 
+    <div class="field" data-hook="featured">
+      <%= f.label :featured, t(:featured) %>
+      <%= f.check_box :featured, :class => 'fullwidth' %>
+    </div>
+
     <% unless @product.has_variants? %>
       <!--<%= f.field_container :sku do %>
         <%= f.label :sku, t(:sku) %>
