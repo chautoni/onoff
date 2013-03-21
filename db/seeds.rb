@@ -18,13 +18,12 @@ default_path = File.join(File.dirname(__FILE__), 'default')
 Rake::Task['db:load_dir'].reenable
 Rake::Task['db:load_dir'].invoke(default_path)
 
-Spree::OptionType.create(:name => 'color', :presentation => 'Màu') unless Spree::OptionType.find_by_name(	'color')
-Spree::OptionType.create(:name => 'size', :presentation => 'Size') unless Spree::OptionType.find_by_name('size')
+Spree::OptionType.create(:name => 'color', :presentation => 'Màu') unless Spree::OptionType.exists?(name: 'color')
+Spree::OptionType.create(:name => 'size', :presentation => 'Size') unless Spree::OptionType.exists?(name: 'size')
 
 Spree::Property.create(:name => 'unit', :presentation => 'Đơn Vị Tính') unless Spree::Property.find_by_name('unit')
 
-Spree::Zone.find_or_create_by_name('Asia')
-asia_zone = Spree::Zone.find_by_name('Asia')
+asia_zone = Spree::Zone.find_or_create_by_name('Asia')
 asia_zone.zone_members.create(:zoneable_id => 219, :zoneable_type => 'Spree::Country') if asia_zone.zone_members.empty?
 
 Spree::Role.find_or_create_by_name('super_admin')
