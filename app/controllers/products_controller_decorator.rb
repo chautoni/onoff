@@ -39,10 +39,10 @@ Spree::ProductsController.class_eval do
 
   private
   def load_search_filter
-    @filter_color_option_values = Spree::OptionType.find_by_name('color').option_values.select('id, name, option_type_id').map do |option_value|
+    @filter_color_option_values = Spree::OptionType.find_by_name('color').option_values.select('id, name, option_type_id, color_hex_code').map do |option_value|
       [option_value.name, option_value.id]
     end
-    @filter_size_option_values = Spree::OptionType.find_by_name('size').option_values.select('id, name, option_type_id').map do |option_value|
+    @filter_size_option_values = Spree::OptionType.find_by_name('size').option_values.select('id, name, option_type_id, color_hex_code').map do |option_value|
       [option_value.name, option_value.id]
     end
     @filter_collections_taxon_values = Spree::Taxon

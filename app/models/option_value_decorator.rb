@@ -15,7 +15,7 @@ Spree::OptionValue.class_eval do
   private
 
   def auto_assign_color_hex_code
-    self.color_hex_code = "ffffff" if Spree::OptionType.exists?(:id => option_type_id, :name => 'color') && color_hex_code.blank?
+    self.color_hex_code = "ffffff" if Spree::OptionType.exists?(:id => option_type_id) && color_hex_code.blank?
   end
 
   def check_color_code

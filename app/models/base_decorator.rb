@@ -19,18 +19,24 @@ Spree::Core::Search::Base.class_eval do
     @properties[:per_page] = per_page > 0 ? per_page : Spree::Config[:products_per_page]
     @properties[:page] = (params[:page].to_i <= 0) ? 1 : params[:page].to_i
     @properties[:tag] = params[:tag]
-    @properties[:colors] = params[:colors]
-    @properties[:branches] = params[:branches]
-    if params[:price].present? && Spree::Product::PRICE_RANGE_SQLS.keys.include?(params[:price])
-      @properties[:price] = Spree::Product::PRICE_RANGE_SQLS[params[:price]]
+    @properties[:variants] = []
+    @properties[:variants] += params[:colors] if params[:colors].is_a? Array
+    @properties[:variants] += params[:sizes] if params[:sizes].is_a? Array
+    @properties[:taxons] = []
+    @properties[:taxons] += params[:branches] if params[:branches].is_a? Array
+    @properties[:taxons] += params[:collections] if params[:collections].is_a? Array
+    if params[:prices].is_a?(Array)
+      @properties[:prices] = params[:prices].map do |price_index|
+        Spree::Product::PRICE_RANGE_SQLS[price_index]
+      end.compact.join(' or ')
     end
   end
 
   def filter_products
     @products = @products.tagged_with(@properties[:tag]) if @properties[:tag].present?
-    @products = @products.joins(:variants => :option_values).where(:'spree_option_values.id' => @properties[:colors]) if @properties[:colors].present?
-    @products = @products.joins(taxons: :taxonomy).where('spree_taxonomies.id = ?', @properties[:branches]) if @properties[:branches].present?
-    @products = @products.joins(:master => :prices).where("spree_prices.currency = ? and spree_prices.amount #{@properties[:price]}", Spree::Config.currency) if @properties[:price].present?
+    @products = @products.joins(:variants => :option_values).where(:'spree_option_values.id' => @properties[:variants].compact.uniq) if @properties[:variants].present?
+    @products = @products.joins(:taxons).where(:'spree_taxons.id' => @properties[:taxons].compact.uniq) if @properties[:taxons].present?
+    @products = @products.joins(:master => :prices).where("spree_prices.currency = ? and #{@properties[:prices]}", Spree::Config.currency) if @properties[:prices].present?
   end
 end
 

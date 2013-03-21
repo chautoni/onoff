@@ -18,9 +18,9 @@ Spree::Product.class_eval do
     ['> 200,000', '3']
   ]
   PRICE_RANGE_SQLS = {
-    '1' => '< 100000',
-    '2' => 'between 100000 and 200000',
-    '3' => '> 200000'
+    '1' => 'spree_prices.amount < 100000',
+    '2' => 'spree_prices.amount between 100000 and 200000',
+    '3' => 'spree_prices.amount > 200000'
   }
 	after_create :assign_color_and_size
   after_save :assign_cover_image

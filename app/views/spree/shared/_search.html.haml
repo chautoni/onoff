@@ -8,35 +8,35 @@
         %ul.filter-options
           - @filter_color_option_values.each do |option_value|
             %li
-              = check_box_tag 'colors[]', option_value[1]
+              = check_box_tag 'colors[]', option_value[1], params[:colors].try(:include?, option_value[1].to_s)
               = option_value[0]
       %li.filter
         = t('products_page.search_filter_options.branches')
         %ul.filter-options
           - @filter_branches_taxon_values.each do |taxon_value|
             %li
-              = check_box_tag 'branches[]', taxon_value[1]
+              = check_box_tag 'branches[]', taxon_value[1], params[:branches].try(:include?, taxon_value[1].to_s)
               = taxon_value[0]
       %li.filter
         = t('products_page.search_filter_options.price')
         %ul.filter-options
           - Spree::Product::PRICE_RANGES.each do |range|
             %li
-              = check_box_tag 'prices[]', range[1]
+              = check_box_tag 'prices[]', range[1], params[:prices].try(:include?, range[1].to_s)
               = range[0]
       %li.filter
         = t('products_page.search_filter_options.size')
         %ul.filter-options
           - @filter_size_option_values.each do |option_value|
             %li
-              = check_box_tag 'sizes[]', option_value[1]
+              = check_box_tag 'sizes[]', option_value[1], params[:sizes].try(:include?, option_value[1].to_s)
               = option_value[0]
       %li.filter
         = t('products_page.search_filter_options.collections')
         %ul.filter-options
           - @filter_collections_taxon_values.each do |taxon_value|
             %li
-              = check_box_tag 'collections[]', taxon_value[1]
+              = check_box_tag 'collections[]', taxon_value[1], params[:collections].try(:include?, taxon_value[1].to_s)
               = taxon_value[0]
     #search-box
       = search_field_tag :keywords, params[:keywords], :placeholder => t('products_page.product_search_placeholder')

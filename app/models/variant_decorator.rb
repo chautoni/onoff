@@ -40,6 +40,6 @@ Spree::Variant.class_eval do
   end
 
   def auto_assign_master_price
-    self.update_attributes(:price => self.product.master.price)
+    update_attributes(:price => product.master.price) if product.master.present?
   end
 end
