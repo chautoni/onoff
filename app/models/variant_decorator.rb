@@ -9,7 +9,7 @@ Spree::Variant.class_eval do
   after_create :auto_assign_master_price
 
   def option_value_name(opt_name)
-	self.option_values.detect { |o| o.option_type.name == opt_name }.try(:name)
+    self.option_values.detect { |o| o.option_type.name == opt_name }.try(:name)
   end
 
   def options_text
@@ -24,7 +24,7 @@ Spree::Variant.class_eval do
 
   private
   def assign_sku
-  	self.sku = "#{self.product.product_sku}#{self.option_value('color')}#{self.option_value('size')}"
+    self.sku = "#{self.product.product_sku}#{self.option_value('color')}#{self.option_value('size')}"
   end
 
   def check_duplicate_variants
@@ -33,7 +33,7 @@ Spree::Variant.class_eval do
     variants_options.each do |v|
       if (variants_options - [v]).map{ |e| e[:option_values] }.include?(v[:option_values])
         id = variants_options.select{ |e| e[:option_values] == v[:option_values] }.map{ |e| e[:id] }.sort.last
-        duplicated_variants << Spree::Variant.find(id)
+        duplicated_variants << Spree::Variant.find_by_id(id) if Spree::Variant.exists?(id: id)
       end
     end
     duplicated_variants.uniq.map(&:destroy)
