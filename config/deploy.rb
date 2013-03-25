@@ -1,5 +1,17 @@
 require "bundler/capistrano"
 
+# Automatically precompile assets
+load "deploy/assets"
+
+# RVM integration
+require "rvm/capistrano"
+
+# Target ruby version
+set :rvm_ruby_string, '1.9.3'
+
+# User specific RVM installation
+set :rvm_type, :user
+
 server "198.211.127.54", :web, :app, :db, primary: true
 
 set :application, "onoff"
@@ -26,10 +38,10 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/conf/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
-    put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
+    put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
     puts "Now edit the config files in #{shared_path}."
   end
   after "deploy:setup", "deploy:setup_config"
@@ -37,15 +49,12 @@ namespace :deploy do
   task :symlink_config, roles: :app do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
-  after "deploy:finalize_update", "deploy:symlink_config"
 
-  desc "Make sure local git is in sync with remote."
-  task :check_revision, roles: :web do
-    unless `git rev-parse HEAD` == `git rev-parse origin/master`
-      puts "WARNING: HEAD is not the same as origin/master"
-      puts "Run `git push` to sync changes."
-      exit
-    end
+  desc "Fix permission"
+  task :fix_permissions, :roles => [ :app, :db, :web ] do
+    run "#{try_sudo} chmod 777 -R #{current_path}/log"
   end
-  before "deploy", "deploy:check_revision"
+
+  after "deploy:finalize_update", "deploy:symlink_config"
+  after "deploy:update_code", 'deploy:fix_permissions'
 end
