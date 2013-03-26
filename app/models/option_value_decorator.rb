@@ -12,6 +12,18 @@ Spree::OptionValue.class_eval do
     self.presentation
   end
 
+  def self.color_option_value_for(arr)
+    arr.map do |e|
+      Spree::OptionValue.where(:option_type_id => Spree::OptionType.find_by_name('color').id, :name => e)
+    end.flatten
+  end
+
+  def self.size_option_value_for(arr)
+    arr.map do |e|
+      Spree::OptionValue.where(:option_type_id => Spree::OptionType.find_by_name('size').id, :name => e)
+    end.flatten
+  end
+
   private
 
   def auto_assign_color_hex_code

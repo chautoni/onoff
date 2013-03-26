@@ -16,19 +16,23 @@ Spree::Image.class_eval do
 
     # These are the versions defined in Spree::Image
     version :mini do
-      process :resize_to_fit => [48, 48]
+      process :resize_to_fit => [125, 125]
     end
 
     version :small do
-      process :resize_to_fit => [100, 100]
+      process :resize_to_fit => [300, 300]
     end
 
     version :product do
-      process :resize_to_fit => [240, 240]
+      process :resize_to_fit => [510, 510]
     end
 
     version :large do
-      process :resize_to_fit => [600, 600]
+      process :resize_to_fit => [1000, 1000]
+    end
+
+    version :feature do
+      process :resize_to_fit => [460, 460]
     end
   end
 
@@ -39,9 +43,4 @@ Spree::Image.class_eval do
   def save_attached_files; end
   def prepare_for_destroy; end
   def destroy_attached_files; end
-
-  private
-  def attachment_file_name
-    "not_blank"
-  end
 end

@@ -23,22 +23,22 @@
         <div itemprop="description" data-hook="description">
           <%= product_description(@product) rescue t(:product_has_no_description) %>
         </div>-->
-        <h1 class="product-title" itemprop="name">Vớ Elegance Dài</h1>
-        <h2 class="product-sku" itemprop="sku">MSP ADKEWAB</h2>
+        <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
+        <h2 class="product-sku" itemprop="sku">MSP <%= @product.sku %></h2>
         <div itemprop="description" data-hook="description">
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. </p>
+          <p><%= @product.description %></p>
         </div>
         <div class='available-colors'>
           <ul>
-            <li style="background-color: #15386d"></li>
-            <li style="background-color: #6d3a15"></li>
-            <li style="background-color: #6d1534"></li>
+            <% Spree::OptionValue.color_option_value_for(@product.colors).each do |option_value| %>
+              <li style="background-color: #<%= option_value.color_hex_code %>"></li>
+            <% end %>
           </ul>
         </div>
         <div class='available-sizes'>
           <ul class='no-list-type'>
-            <% ['S', 'M', 'L', 'X', 'XL', 'XXL', 'X', 'XL', 'XXL'].each do |size| %>
-              <li><%= size %></li>
+            <% Spree::OptionValue.size_option_value_for(@product.sizes).each do |option_value| %>
+              <li><%= option_value.name %></li>
             <% end %>
           </ul>
         </div>

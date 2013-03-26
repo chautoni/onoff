@@ -17,5 +17,6 @@ id_rsa
 tags
 zeus.json
 /public/spree/products/*
+/public/uploads/tmp/*
 
 .DS_Store

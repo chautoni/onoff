@@ -33,7 +33,7 @@ Spree::Product.class_eval do
   end
 
   def cover_image
-    image = Spree::Image.find(self.cover_image_id) if self.cover_image_id
+    image = Spree::Image.find_by_id(self.cover_image_id) if self.cover_image_id
     image || self.master.images.first
   end
 
