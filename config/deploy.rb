@@ -38,7 +38,7 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/conf/#{application}"
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.yml"), "#{shared_path}/config/database.yml"
@@ -50,11 +50,10 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
-  desc "Fix permission"
-  task :fix_permissions, :roles => [ :app, :db, :web ] do
-    run "#{try_sudo} chmod 777 -R #{current_path}/log"
+  task :rake_migration, roles: :app do
+    run 'RAILS_ENV=production bundle exec rake db:migrate'
   end
 
   after "deploy:finalize_update", "deploy:symlink_config"
-  after "deploy:update_code", 'deploy:fix_permissions'
+  before 'deploy:restart', 'deploy:rake_migration'
 end

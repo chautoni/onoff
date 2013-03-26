@@ -4,18 +4,6 @@ apt-get -y update
 apt-get -y upgrade
 apt-get -y install curl git-core python-software-properties software-properties-common
 
-# rvm
-curl -L get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm requirements
-rvm install 1.9.3
-rvm use 1.9.3 --default
-gem update --sytem
-gem install bundler
-gem install passenger 
-rvmsudo passenger-install-nginx-module
-
-
 # nginx
 add-apt-repository ppa:nginx/stable
 apt-get -y update
@@ -47,4 +35,19 @@ adduser kane --ingroup admin
 su kane
 mkdir .ssh
 cat ~/.ssh/id_rsa.pub | ssh kane@198.211.127.54 'cat >> ~/.ssh/authorized_keys'
+
+# rvm
+# install under user kane
+curl -L get.rvm.io | bash -s stable
+echo 'source ~/.profile' > ~/.bash_login
+rvm requirements
+rvm install 1.9.3
+rvm use 1.9.3 --default
+gem update --sytem
+gem install bundler
+
+# After deploy:cold
+sudo rm /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo /usr/sbin/update-rc.d -f unicorn_onoff defaults
 ```
