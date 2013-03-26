@@ -51,7 +51,7 @@ namespace :deploy do
   end
 
   task :rake_migration, roles: :app do
-    run 'RAILS_ENV=production bundle exec rake db:migrate'
+    run 'cd #{current_path} && RAILS_ENV=production bundle exec rake db:migrate'
   end
 
   after "deploy:finalize_update", "deploy:symlink_config"
