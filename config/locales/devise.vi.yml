@@ -32,14 +32,15 @@ vi:
       send_instructions: 'Bạn sẽ nhận được email hướng dẫn xác thực tài khoản trong một vài phút nữa.'
       send_paranoid_instructions: 'Nếu email của bạn có trong hệ thống, bạn sẽ nhận được email hướng dẫn xác thực tài khoản trong một vài phút nữa.'
       confirmed: 'Xác thưc tài khoản thành công! Bạn đã được tự động đăng nhập.'
-    registrations:
-      signed_up: 'Xin chào mừng! Bạn đã đăng ký thành công.'
-      signed_up_but_unconfirmed: 'Một email chứa đường dẫn để xác thực tài khoản đã được gửi cho bạn. Bạn vui lòng kiểm tra email.'
-      signed_up_but_inactive: 'Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn chưa được kích hoạt nên chưa thể đăng nhập được.'
-      signed_up_but_locked: 'Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn đã bị khóa nên không thể đăng nhập được.'
-      updated: 'Bạn đã cập nhật thông tin tài khoản thành công.'
-      update_needs_confirmation: "Thông tin tài khoản đã được cập nhật thành công, nhưng bạn cần xác thực địa chỉ email mới. Bạn vui lòng kiểm tra email và nhấn vào đường dẫn xác thực tài khoản để hoàn tất việc thay đổi địa chỉ email."
-      destroyed: 'Xin chào tạm biệt! Tài khoản của bạn đã được xóa, rất mong được gặp lại bạn sớm!'
+    user_registrations:
+      user:
+        signed_up: 'Xin chào mừng! Bạn đã đăng ký thành công.'
+        signed_up_but_unconfirmed: 'Một email chứa đường dẫn để xác thực tài khoản đã được gửi cho bạn. Bạn vui lòng kiểm tra email.'
+        signed_up_but_inactive: 'Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn chưa được kích hoạt nên chưa thể đăng nhập được.'
+        signed_up_but_locked: 'Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn đã bị khóa nên không thể đăng nhập được.'
+        updated: 'Bạn đã cập nhật thông tin tài khoản thành công.'
+        update_needs_confirmation: "Thông tin tài khoản đã được cập nhật thành công, nhưng bạn cần xác thực địa chỉ email mới. Bạn vui lòng kiểm tra email và nhấn vào đường dẫn xác thực tài khoản để hoàn tất việc thay đổi địa chỉ email."
+        destroyed: 'Xin chào tạm biệt! Tài khoản của bạn đã được xóa, rất mong được gặp lại bạn sớm!'
     unlocks:
       send_instructions: 'Bạn sẽ nhận được email hướng dẫn bỏ khóa tài khoản trong một vài phút nữa.'
       unlocked: 'Tài khoản của bạn đã được bỏ khóa thành công. Mời bạn đăng nhập'

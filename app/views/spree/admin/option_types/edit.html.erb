@@ -41,26 +41,8 @@
             <td class="actions"></td>
           </tr>
         <% else %>
-          <%= f.fields_for :option_values, @option_type.option_values.new do |option_value_form| %>
-            <%= render(:partial => 'option_value_fields', :locals => { :f => option_value_form }) %>
-          <% end %>
-        <% end %>
-      </tbody>
-      <tbody>
-        <% unless @option_type.option_values.empty? %>
-          <% @option_type.option_values.each do  |option_value| %>
-            <% if option_value.persisted? %>
-              <tr class="option_value fields" id="spree_<%= dom_id(f.object) %>"  data-hook="option_value" class="<%= cycle('odd', 'even')%>">
-                <td class="no-border">
-                  <span class="handle"></span>
-                </td>
-                <td class="name"><%= option_value.name %></td>
-                <td class="presentation"><%= option_value.presentation %></td>
-                <% if @option_type.name == 'color' %>
-                  <td class="color-code"><span style='background: #<%= option_value.color_hex_code %>'></span></td>
-                <% end %>
-              </tr>
-            <% end %>
+          <%= f.fields_for :option_values do |option_value_form| %>
+            <%= render :partial => 'option_value_fields', :locals => { :f => option_value_form } %>
           <% end %>
         <% end %>
       </tbody>

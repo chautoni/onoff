@@ -38,3 +38,6 @@ branches = Spree::Taxonomy.find_or_create_by_name('branches')
 branches.taxons.find_or_create_by_name('Vớ')
 branches.taxons.find_or_create_by_name('Quần lót')
 branches.taxons.find_or_create_by_name('Áo lót')
+
+image_setting_preference = Spree::Preference.find_by_key('spree/app_configuration/attachment_styles') || Spree::Preference.create(:key => 'spree/app_configuration/attachment_styles', :value_type => 'string')
+image_setting_preference.update_attributes(:value => "{\"mini\":\"135x135>\",\"small\":\"300x300>\",\"product\":\"510x510>\",\"large\":\"1000x1000>\",\"feature\":\"460x460>\"}")
