@@ -39,4 +39,9 @@ Spree::Image.class_eval do
   def save_attached_files; end
   def prepare_for_destroy; end
   def destroy_attached_files; end
+
+  private
+  def attachment_file_name
+    "not_blank"
+  end
 end
